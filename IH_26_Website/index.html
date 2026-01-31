@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Experience | IH_26 Hackathon</title>
+    <meta name="description"
+        content="Relive the innovation of IH_26 Hackathon. A cinematic visual journey through our memories.">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../assets/logo/favicon.png" type="image/png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css?v=2">
+</head>
+
+<body>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox hidden" aria-hidden="true">
+        <button id="lightbox-close" class="lightbox-close" aria-label="Close">&times;</button>
+        <button id="lightbox-prev" class="lightbox-nav prev" aria-label="Previous Image">&lt;</button>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="Full screen view">
+            <div class="lightbox-caption"></div>
+        </div>
+        <button id="lightbox-next" class="lightbox-nav next" aria-label="Next Image">&gt;</button>
+    </div>
+
+    <main>
+        <!-- SECTION 1: IMMERSIVE INTRO COLLAGE -->
+        <section id="intro" class="section intro-section">
+            <div class="intro-bg-layer">
+                <div class="collage-strip">
+                    <img src="Categorywise/Registration%20Desk/20250131_080819.jpg" alt="Registration Desk"
+                        class="collage-item">
+                    <img src="Categorywise/Teams/20250131_092055.jpg" alt="Team Coding" class="collage-item">
+                    <img src="Categorywise/Teams/20250131_093212.jpg" alt="Stage Presentation" class="collage-item">
+                    <img src="Categorywise/Winners/20250131_192052.jpg" alt="Winners Celebration" class="collage-item">
+                </div>
+            </div>
+            <div class="intro-overlay">
+                <h1 class="fade-in-up">Indus Hackathon 2025</h1>
+                <p class="fade-in-up delay-1">Relive the Innovation</p>
+                <div class="scroll-hint fade-in-up delay-2">
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: INAUGURATION & OPENING MOMENTS -->
+        <section id="inauguration" class="section inauguration-section">
+            <div class="container">
+                <h2 class="section-title reveal-text">Inauguration</h2>
+                <div class="grid-asymmetric">
+                    <div class="grid-item tall reveal-zoom">
+                        <img src="Categorywise/Guest/20250131_095316.jpg" alt="Lamp Lighting Ceremony"
+                            data-caption="Lighting the lamp of innovation">
+                    </div>
+                    <div class="grid-stack">
+                        <div class="grid-item reveal-right">
+                            <img src="Categorywise/Guest/20250131_100913.jpg" alt="Chief Guest Speech"
+                                data-caption="Inspirational words from our Chief Guest">
+                        </div>
+                        <div class="grid-item reveal-right delay-1">
+                            <img src="Categorywise/Guest/20250131_110239.jpg" alt="Audience Listening"
+                                data-caption="Full house at the opening ceremony">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: TEAM ENERGY MOSAIC -->
+        <section id="team-energy" class="section team-section">
+            <div class="container">
+                <h2 class="section-title reveal-text">Team Energy</h2>
+                <div class="masonry-grid">
+                    <div class="masonry-item reveal-up">
+                        <img src="Categorywise/Teams/20250131_091526.jpg" alt="Team Collaboration"
+                            data-caption="Late night brainstorming">
+                    </div>
+                    <div class="masonry-item reveal-up delay-1">
+                        <img src="Categorywise/Teams/20250131_092342.jpg" alt="Intense Coding"
+                            data-caption="Debugging sessions">
+                    </div>
+                    <div class="masonry-item reveal-up delay-2">
+                        <img src="Categorywise/Teams/IMG_20250131_092821.jpg" alt="Group Discussion"
+                            data-caption="Planning the next feature">
+                    </div>
+                    <div class="masonry-item reveal-up delay-3">
+                        <img src="Categorywise/Teams/IMG_20250131_093716.jpg" alt="Energy Drinks"
+                            data-caption="Fueling the innovation">
+                    </div>
+                    <div class="masonry-item reveal-up">
+                        <img src="Categorywise/Teams/20250131_094404.jpg" alt="Whiteboard logic"
+                            data-caption="Mapping out the logic">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: TALKS & MENTORING SPOTLIGHT -->
+        <section id="talks" class="section talks-section">
+            <div class="container full-width-flex">
+                <div class="blur-side left reveal-left"></div>
+                <div class="center-focus reveal-zoom">
+                    <img src="Categorywise/Guest/20250131_104643.jpg" alt="Keynote Speaker"
+                        data-caption="Keynote on Future Tech">
+                    <div class="caption-overlay">
+                        <h3>Mentoring & Talks</h3>
+                        <p>Industry experts guiding the next generation.</p>
+                    </div>
+                </div>
+                <div class="blur-side right reveal-right"></div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: COMPETITION IN PROGRESS (HORIZONTAL SCROLL) -->
+        <section id="competition" class="section competition-section">
+            <div class="sticky-container">
+                <h2 class="section-title p-absolute">The Grind</h2>
+                <div class="scroll-progress"></div>
+                <div class="horizontal-track">
+                    <div class="track-item">
+                        <img src="Categorywise/Teams/20250131_091235.jpg" alt="Night Coding Wide"
+                            data-caption="The arena at 2 AM">
+                    </div>
+                    <div class="track-item">
+                        <img src="Categorywise/Teams/20250131_091641.jpg" alt="Focused Teams"
+                            data-caption="In the zone">
+                    </div>
+                    <div class="track-item">
+                        <img src="Categorywise/20250131_123318PMByGPSMapCamera.jpg" alt="Lunch Break"
+                            data-caption="Refueling">
+                    </div>
+                    <div class="track-item">
+                        <img src="Categorywise/Jury/Mr.Akash%20Padhiyar/20250131_151305.jpg" alt="Mentor Guidance"
+                            data-caption="Expert Mentoring">
+                    </div>
+                    <div class="track-item">
+                        <img src="Categorywise/Jury/Ms.Poonam%20Patel/20250131_153104.jpg" alt="Evaluation"
+                            data-caption="Jury Rounds">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: WINNERS & CELEBRATION -->
+        <section id="winners" class="section winners-section">
+            <div class="container">
+                <h2 class="section-title reveal-text">Victory</h2>
+                <div class="winners-layout">
+                    <div class="winner-hero reveal-zoom">
+                        <img src="Categorywise/Winners/20250131_191750.jpg" alt="Grand Winners"
+                            data-caption="Champions of IH_26">
+                        <div class="winner-overlay">
+                            <h3>Grand Champions</h3>
+                        </div>
+                    </div>
+                    <div class="winner-grid">
+                        <div class="winner-sub reveal-up delay-1">
+                            <img src="Categorywise/Winners/20250131_191811.jpg" alt="Runner Up"
+                                data-caption="1st Runner Up">
+                        </div>
+                        <div class="winner-sub reveal-up delay-2">
+                            <img src="Categorywise/Winners/20250131_191920.jpg" alt="Runner Up"
+                                data-caption="2nd Runner Up">
+                        </div>
+                        <div class="winner-sub reveal-up delay-3">
+                            <img src="Categorywise/Winners/20250131_192040.jpg" alt="Best Design"
+                                data-caption="Best Design Award">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: ORGANIZING TEAM -->
+        <section id="organizers" class="section organizers-section">
+            <div class="container">
+                <h2 class="section-title reveal-text">The Team</h2>
+                <div class="card-grid">
+                    <div class="card reveal-flip">
+                        <img src="Categorywise/Hiren%20Sir%20Mob/IMG20250131112057.jpg" alt="Organizer Lead">
+                        <p>Core Team</p>
+                    </div>
+                    <div class="card reveal-flip delay-1">
+                        <img src="Categorywise/Hiren%20Sir%20Mob/IMG20250131113500.jpg" alt="Organizer Lead">
+                        <p>Tech Leads</p>
+                    </div>
+                    <div class="card reveal-flip delay-2">
+                        <img src="Categorywise/Hiren%20Sir%20Mob/IMG20250131121439.jpg" alt="Organizer Lead">
+                        <p>Design Team</p>
+                    </div>
+                    <div class="card reveal-flip delay-3">
+                        <img src="Categorywise/Hiren%20Sir%20Mob/IMG20250131131337.jpg" alt="Volunteers">
+                        <p>Volunteers</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 8: MEMORY WALL & CLOSING -->
+        <section id="memory-wall" class="section memory-section">
+            <div class="memory-collage">
+                <img src="Categorywise/Common/20250131_083744.jpg" class="mem-img drift-1">
+                <img src="Categorywise/Common/20250131_085628.jpg" class="mem-img drift-2">
+                <img src="Categorywise/Common/20250131_090620.jpg" class="mem-img drift-3">
+                <img src="Categorywise/Common/20250131_090830.jpg" class="mem-img drift-4">
+                <img src="Categorywise/Common/20250131_090924.jpg" class="mem-img drift-5">
+            </div>
+            <div class="closing-message fade-in">
+                <h2>Odoo x Indus Hackathon 2026 </h2>
+                <div class="gallery-btn-group">
+                    <a href="../index.html" class="btn-gallery btn-gallery-outline">
+                        ← Back to Home
+                    </a>
+                    <a href="https://indusuni.ac.in/admission/admission.php" class="btn-gallery btn-gallery-primary"
+                        target="_blank">
+                        Register Now ⚡
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/script.js?v=2"></script>
+</body>
+
+</html>

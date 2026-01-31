@@ -1,0 +1,160 @@
+/* =========================================
+   RULES & GUIDELINES SECTION
+   Theme: Odoo X Indus (Glass & Grid)
+========================================= */
+
+.rules-section {
+    position: relative;
+    padding: 100px 0;
+    /* Soft gradient transition from Schedule */
+    background: linear-gradient(180deg, #110b1d 0%, #1a1025 100%);
+    overflow: hidden;
+    color: #fff;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Background Canvas for Grid Trail */
+#rules-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.rules-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Header --- */
+.rules-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.rules-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    background: linear-gradient(to right, #fff, #d8b4fe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.rules-subtitle {
+    font-size: 1.1rem;
+    color: #9ca3af;
+    max-width: 700px;
+    margin: 0 auto;
+    font-weight: 300;
+}
+
+/* --- Grid Layout --- */
+.rules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* --- Rule Card --- */
+.rule-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 30px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.rule-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #7e22ce, #a855f7);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.rule-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(168, 85, 247, 0.3);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.rule-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* Icon (Optional/Placeholder styling if icons added later) */
+.rule-icon {
+    font-size: 1.5rem;
+    color: #a855f7;
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+
+.rule-number {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: #5b21b6;
+    /* High contrast dark purple suitable for badges, or lighter for dark bg? */
+    /* Let's use a badge style */
+    color: #d8b4fe;
+    background: rgba(126, 34, 206, 0.2);
+    padding: 5px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    align-self: flex-start;
+}
+
+.rule-title-text {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.rule-desc {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .rules-section {
+        padding: 60px 0;
+    }
+
+    .rules-title {
+        font-size: 2.2rem;
+    }
+
+    .rules-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,210 @@
+/* =========================================
+   HERO TIMER & CALL-TO-ACTIONS
+   Scoped to .timer-root
+   Theme: Matching Hero Gradient & Glass
+========================================= */
+
+.timer-root {
+    --timer-glass-bg: rgba(255, 255, 255, 0.1);
+    --timer-glass-border: rgba(255, 255, 255, 0.2);
+    --timer-accent: #a855f7;
+    /* Purple */
+    --timer-accent-secondary: #3b82f6;
+    /* Blue */
+    --timer-text: #ffffff;
+    --timer-text-muted: rgba(255, 255, 255, 0.7);
+    --timer-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.hero-enhancement-wrapper {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+    z-index: 10;
+}
+
+/* --- COUNTDOWN TIMER --- */
+.countdown-header {
+    font-size: 0.9rem;
+    color: var(--timer-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.countdown-container {
+    display: flex;
+    gap: 15px;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    border-radius: 20px;
+    border: 1px solid var(--timer-glass-border);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--timer-shadow);
+}
+
+.time-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 80px;
+}
+
+.time-val {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1;
+    color: #fff;
+    font-variant-numeric: tabular-nums;
+}
+
+.time-label {
+    font-size: 0.8rem;
+    color: var(--timer-text-muted);
+    text-transform: uppercase;
+    margin-top: 5px;
+    letter-spacing: 1px;
+}
+
+.time-separator {
+    font-size: 2rem;
+    color: var(--timer-glass-border);
+    margin-top: -5px;
+}
+
+/* --- CTA BUTTONS --- */
+.hero-cta-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn-hero {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+/* Primary */
+.btn-hero-primary {
+    background: linear-gradient(135deg, var(--timer-accent), #7c3aed);
+    color: #fff;
+    border: none;
+    box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+}
+
+.btn-hero-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(168, 85, 247, 0.6);
+    color: #fff;
+}
+
+/* Secondary */
+.btn-hero-secondary {
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    color: #fff;
+    border: none;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+}
+
+.btn-hero-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.6);
+    color: #fff;
+}
+
+/* Outline */
+.btn-hero-outline {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+}
+
+.btn-hero-outline:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #fff;
+    color: #fff;
+}
+
+/* --- INFO PINS --- */
+.hero-pins-group {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.info-pin {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 20px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #eee;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.info-pin i {
+    color: var(--timer-accent);
+}
+
+.info-pin:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: var(--timer-accent);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .countdown-container {
+        padding: 15px;
+        border-radius: 15px;
+    }
+
+    .time-val {
+        font-size: 1.8rem;
+    }
+
+    .time-box {
+        min-width: 50px;
+    }
+
+    .time-separator {
+        font-size: 1.5rem;
+    }
+
+    .hero-cta-group {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-hero {
+        width: 100%;
+    }
+
+    .hero-pins-group {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .info-pin {
+        width: 100%;
+        justify-content: center;
+    }
+}

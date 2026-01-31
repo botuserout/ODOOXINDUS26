@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Odoo X Indus Hackathon'26</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Join the Odoo X Indus Hackathon '26 - A National-Level innovation challenge fostering creativity and technical excellence at Indus University." />
+    <meta property="og:title" content="Odoo X Indus Hackathon'26" />
+    <meta property="og:description" content="Join the National-Level hackathon! Idea. Initiate. Innovate." />
+    <meta property="og:image" content="assets/logo/logo.png" />
+    <meta property="og:type" content="website" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo/favicon.png">
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/game/neon-game.css" />
+    <link rel="stylesheet" href="assets/css/prize/prize-section.css" />
+    <link rel="stylesheet" href="assets/css/register/register-section.css" />
+    <link rel="stylesheet" href="assets/css/about/about-section.css" />
+    <link rel="stylesheet" href="assets/css/faculty-carousel.css" />
+    <link rel="stylesheet" href="assets/css/venue/venue.css" />
+    <link rel="stylesheet" href="assets/css/faq/faq.css" />
+    <link rel="stylesheet" href="assets/css/footer/footer.css" />
+    <link rel="stylesheet" href="assets/css/hero-timer.css" />
+    <link rel="stylesheet" href="assets/css/team/core-team.css" />
+    <link rel="stylesheet" href="assets/css/rules/rules.css" />
+    <link rel="stylesheet" href="assets/css/loader/particle-loader.css" />
+</head>
+
+<body>
+
+    <!-- ================= PRELOADER ================= -->
+    <div id="preloader">
+        <div id="particles-background" class="vertical-centered-box"></div>
+        <div id="particles-foreground" class="vertical-centered-box"></div>
+
+        <div class="vertical-centered-box">
+            <div class="content">
+                <div class="loader-circle"></div>
+                <div class="loader-line-mask">
+                    <div class="loader-line"></div>
+                </div>
+                <!-- Indus University Logo -->
+                <img src="assets/logo/logo2.png" alt="Indus University Logo" class="loader-logo">
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar navbar-expand-lg fixed-top main-navbar p-0">
+        <div class="container-fluid p-0">
+            <a class="navbar-brand px-4 py-3 m-0" href="#">
+                <img src="assets/logo/logo.png" alt="CloneComp Logo" height="40">
+                <img src="assets/logo/naac_logo.png" alt="NAAC Accredited" class="naac-logo" height="40"
+                    style="margin-left: 10px;">
+            </a>
+
+            <button class="navbar-toggler m-3" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center text-uppercase fw-bold">
+                    <li class="nav-item">
+                        <a class="nav-link px-4 py-3" href="#hero">Home</a>
+                    </li>
+
+                    <!-- Event Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link px-4 py-3 dropdown-toggle" href="#" id="eventDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Event
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="eventDropdown">
+                            <li><a class="dropdown-item" href="#about">About</a></li>
+                            <li><a class="dropdown-item" href="#schedule">Schedule</a></li>
+                            <li><a class="dropdown-item" href="#prizes">Prizes</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link px-4 py-3" href="#venue">Venue</a>
+                    </li>
+
+                    <!-- Participate Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link px-4 py-3 dropdown-toggle" href="#" id="participateDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Participate
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="participateDropdown">
+                            <li><a class="dropdown-item" href="#rules">Rules</a></li>
+                            <li><a class="dropdown-item" href="#register">Register</a></li>
+                        </ul>
+                    </li>
+
+
+                    <!-- Team Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link px-4 py-3 dropdown-toggle" href="#" id="teamDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Team
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="teamDropdown">
+                            <li><a class="dropdown-item" href="#faculty">Faculty</a></li>
+                            <li><a class="dropdown-item" href="#core-team">Core Team</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-4 py-3" href="IH_26_Website/index.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-4 py-3" href="#faq">FAQs</a>
+                    </li>
+                </ul>
+
+                <!-- Separate CTA Button -->
+                <div class="d-flex ms-lg-3 me-lg-4 pb-3 pb-lg-0">
+                    <a class="btn btn-odoo text-white px-4 py-2 fw-bold" href="#">
+                        Register
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================= HERO ================= -->
+    <section id="hero" class="hero-section text-white position-relative">
+        <canvas id="hero-canvas"></canvas>
+        <canvas id="grid-canvas"></canvas>
+        <div class="container text-center hero-content position-relative z-2">
+            <h1 class="display-1 fw-bold text-uppercase animate__animated animate__fadeInDown mb-0 title-large">
+                ODOO X INDUS HACKATHON'26 </h1>
+            <h2 class="h2 fw-bold animate__animated animate__fadeInUp my-4">
+                .IDEA.INITIATE.INNOVATE.
+            </h2>
+            <p class="lead animate__animated animate__fadeInUp mb-5">
+                Join us ...!the National-Level hackathon!
+            </p>
+
+            <!-- New Hero Enhancements -->
+            <div class="hero-enhancement-wrapper animate__animated animate__fadeInUp" style="animation-delay: 0.5s;">
+
+                <!-- Countdown Timer -->
+                <div class="timer-block">
+                    <div class="countdown-header">Registration Closes In:</div>
+                    <div class="countdown-container">
+                        <div class="time-box">
+                            <span class="time-val" id="days">00</span>
+                            <span class="time-label">Days</span>
+                        </div>
+                        <div class="time-separator">:</div>
+                        <div class="time-box">
+                            <span class="time-val" id="hours">00</span>
+                            <span class="time-label">Hours</span>
+                        </div>
+                        <div class="time-separator">:</div>
+                        <div class="time-box">
+                            <span class="time-val" id="minutes">00</span>
+                            <span class="time-label">Mins</span>
+                        </div>
+                        <div class="time-separator">:</div>
+                        <div class="time-box">
+                            <span class="time-val" id="seconds">00</span>
+                            <span class="time-label">Secs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="hero-cta-group">
+                    <!-- <a href="#register" class="btn-hero btn-hero-primary">
+                        Register Now -->
+                    </a>
+                    <a href="https://indusuni.ac.in/admission/admission.php" class="btn-hero btn-hero-secondary">
+                        <i class="fas fa-map-marked-alt"></i> Register Now
+                    </a>
+                    <a href="IH_26_Website/index.html" class="btn-hero btn-hero-outline">
+                        <i class="fas fa-images"></i> View Previous Hackathon
+                    </a>
+
+                </div>
+
+                <!-- Info Pins -->
+                <div class="hero-pins-group">
+                    <div class="info-pin">
+                        <i class="fas fa-calendar-alt"></i> Jan 31 – Feb 01, 2026
+                    </div>
+                    <div class="info-pin">
+                        <i class="fas fa-map-marker-alt"></i> Indus University, Bhanvar Building
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Floating Tech Icons (Hero) -->
+            <div class="hero-floating-icons">
+                <div class="hero-icon icon-html"><i class="fab fa-html5"></i></div>
+                <div class="hero-icon icon-code"><i class="fas fa-terminal"></i></div>
+                <div class="hero-icon icon-python"><i class="fab fa-python"></i></div>
+                <div class="hero-icon icon-js"><i class="fab fa-js"></i></div>
+                <div class="hero-icon icon-db"><i class="fas fa-database"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= ABOUT SECTION ================= -->
+    <!-- Placed below Schedule as requested -->
+    <div class="about-section-root">
+        <section id="about" class="about-section">
+            <div class="about-bg-shape about-shape-1"></div>
+            <div class="about-bg-shape about-shape-2"></div>
+
+            <div class="about-container">
+
+                <!-- Main 2-Column Layout -->
+                <div class="about-content-grid">
+
+                    <!-- Left Column: Header + Narrative + Buttons -->
+                    <div class="about-text-col">
+
+                        <!-- Header Moved Here -->
+                        <div class="about-header">
+                            <span class="about-label">The Event</span>
+                            <h2 class="about-title">About <span>Odoo x Indus</span><br>Hackathon '26</h2>
+                            <p class="about-subtitle">Where code meets creativity. A 48-hour sprint to solve real-world
+                                problems using the power of open source.</p>
+                        </div>
+
+                        <div class="about-description">
+                            <p>
+                                The <strong>Odoo x Indus Hackathon</strong> is more than just a competition; it's a
+                                convergence of brilliant minds, industry leaders, and open-source enthusiasts. We are
+                                challenging participants to push the boundaries of business technology.
+                            </p>
+                            <p>
+                                Whether you are an AI wizard, a full-stack developer, or a UX designer, this platform is
+                                built for you. Collaborate in a high-energy environment, receive mentorship from Odoo
+                                experts, and deploy solutions that matter.
+                            </p>
+                        </div>
+
+                        <div class="about-cta-group">
+                            <a href="https://indusuni.ac.in/admission/admission.php" class="btn-about-primary">Register
+                                Now</a>
+                            <a href="#tracks" class="btn-about-secondary">Explore Tracks</a>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Interactive Placeholder / Visuals -->
+                    <!-- Reserved space for Game Container -->
+                    <div class="about-visual-col interactive-placeholder">
+
+                        <!-- Existing visuals kept as specific visual content for now -->
+                        <!-- Replaced Highlights with Image Stack as requested -->
+                        <!-- <div class="about-highlights-grid">
+                            ...
+                        </div> -->
+
+                        <!-- NEW: Image Placeholder Block -->
+                        <div class="about-image-stack animate__animated animate__fadeInRight">
+
+                            <!-- Image Slot 1 -->
+                            <div class="about-img-slot">
+                                <img src="https://picsum.photos/id/1/600/300" alt="Previous Edition 1"
+                                    class="img-fluid">
+                                <div class="slot-overlay">
+                                    <span class="slot-label">Edition '25 - Kickoff</span>
+                                </div>
+                            </div>
+
+                            <!-- Image Slot 2 -->
+                            <div class="about-img-slot">
+                                <img src="https://picsum.photos/id/20/600/300" alt="Previous Edition 2"
+                                    class="img-fluid">
+                                <div class="slot-overlay">
+                                    <span class="slot-label">Edition '25 - Hack</span>
+                                </div>
+                            </div>
+
+                            <!-- Image Slot 3 -->
+                            <div class="about-img-slot">
+                                <img src="https://picsum.photos/id/48/600/300" alt="Previous Edition 3"
+                                    class="img-fluid">
+                                <div class="slot-overlay">
+                                    <span class="slot-label">Edition '25 - Awards</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Stats Row -->
+                        <div class="about-stats-row">
+                            <div class="about-stat">
+                                <span class="stat-number">500+</span>
+                                <span class="stat-label">Hackers</span>
+                            </div>
+                            <div class="about-stat">
+                                <span class="stat-number">48H</span>
+                                <span class="stat-label">Non-Stop</span>
+                            </div>
+                            <div class="about-stat">
+                                <span class="stat-number">₹1L+</span>
+                                <span class="stat-label">Prize Pool</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ================= PROCESS / HOW IT WORKS (SLIDING) ================= -->
+    <section id="process-section" class="process-section">
+        <div class="process-container">
+            <div class="process-track">
+
+                <!-- CARD 1 -->
+                <div class="process-card">
+                    <div class="card-inner">
+                        <div class="card-left">
+                            <span class="step-number">01</span>
+                            <div class="hud-box">
+                                <div class="hud-line"></div>
+                                <span class="hud-text">Network</span>
+                            </div>
+                        </div>
+                        <div class="card-right">
+                            <h3>Why You Should Join ?</h3>
+                            <p>Build Your Network
+                                You can make friends and forge professional relationships with people from different
+                                domains. You'll have the chance to
+                                engage with people who share your passions and skills, opening doors to future
+                                partnerships, job opportunities, and
+                                mentorship.</p>
+                        </div>
+                        <div class="floating-icon-container">
+                            <div class="icon-placeholder">
+                                <i class="fas fa-user-plus fa-3x"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="process-card">
+                    <div class="card-inner">
+                        <div class="card-left">
+                            <span class="step-number">02</span>
+                            <div class="hud-box">
+                                <div class="hud-line"></div>
+                                <span class="hud-text">BUILD</span>
+                            </div>
+                        </div>
+                        <div class="card-right">
+                            <h3>Start Building on Real World Problems.</h3>
+                            <p>
+                                See the problem others ignore.
+                                Question assumptions relentlessly.
+                                Prototype without fear.
+                                Collaborate with purpose.
+                                Deliver impact, not excuses.
+                            </p>
+                        </div>
+                        <div class="floating-icon-container">
+                            <div class="icon-placeholder">
+                                <i class="fas fa-cubes fa-3x"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="process-card">
+                    <div class="card-inner">
+                        <div class="card-left">
+                            <span class="step-number">03</span>
+                            <div class="hud-box">
+                                <div class="hud-line"></div>
+                                <span class="hud-text">DEPLOY</span>
+                            </div>
+                        </div>
+                        <div class="card-right">
+                            <h3>Submit Project</h3>
+                            <p>Ship with confidence.
+                                Test for reliability and scale.
+                                Deploy where users truly live.
+                                Monitor, improve, repeat.
+                                Turn code into real-world value.</p>
+                        </div>
+                        <div class="floating-icon-container">
+                            <div class="icon-placeholder">
+                                <i class="fas fa-rocket fa-3x"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FEATURES ================= -->
+    <section id="features" class="features-section">
+        <div class="container position-relative z-2">
+
+            <!-- Neon Game Root Wrapper -->
+            <div class="neon-game-root animate__animated animate__fadeIn">
+
+                <div class="game-header">
+                    <h2 class="display-5 fw-bold text-white mb-2"
+                        style="text-shadow: 0 0 20px rgba(135, 90, 123, 0.5);">HACK THE GRID</h2>
+                    <div class="ttt-status">Player <span id="current-player" style="color: var(--neon-blue)">O</span>'s
+                        Turn</div>
+                </div>
+
+                <!-- Glassy Console Frame -->
+                <div class="console-frame">
+
+                    <!-- Floating Decorative Icons -->
+                    <div class="decor-icon icon-pos-1"><i class="fas fa-terminal"></i></div>
+                    <div class="decor-icon icon-pos-2"><i class="fab fa-js"></i></div>
+                    <div class="decor-icon icon-pos-3"><i class="fab fa-python"></i></div>
+                    <div class="decor-icon icon-pos-4"><i class="fas fa-code"></i></div>
+
+                    <!-- Game Board -->
+                    <div class="ttt-grid" id="ttt-board">
+                        <div class="ttt-cell" data-index="0"></div>
+                        <div class="ttt-cell" data-index="1"></div>
+                        <div class="ttt-cell" data-index="2"></div>
+                        <div class="ttt-cell" data-index="3"></div>
+                        <div class="ttt-cell" data-index="4"></div>
+                        <div class="ttt-cell" data-index="5"></div>
+                        <div class="ttt-cell" data-index="6"></div>
+                        <div class="ttt-cell" data-index="7"></div>
+                        <div class="ttt-cell" data-index="8"></div>
+                    </div>
+
+
+
+                    <button id="ttt-reset">
+                        <i class="fas fa-power-off me-2"></i> SYSTEM RESET
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= SCHEDULE ================= -->
+    <section id="schedule" class="schedule-section">
+        <canvas id="schedule-canvas"
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;"></canvas>
+        <div class="container position-relative z-2">
+            <div class="text-center mb-5">
+                <h2 class="display-3 fw-bold text-uppercase text-white animate__animated animate__fadeInUp">Schedule
+                </h2>
+                <div class="schedule-subtitle mt-3">Roadmap to Victory</div>
+            </div>
+
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+
+                <!-- Node 1: Top -->
+                <div class="timeline-node node-top" style="left: 10%;">
+                    <div class="node-circle active">
+                        <div class="node-glow"></div>
+                    </div>
+                    <div class="node-content">
+                        <h4 class="node-title">Registration Deadline</h4>
+                        <span class="node-date">28 December 2025</span>
+                        <div class="node-status text-uppercase">Registration</div>
+                    </div>
+                    <!-- Tooltip / Hover Detail -->
+                    <div class="node-detail-hover">
+                        Free & Mandatory. Only Team Leader registers. 1-4 Members. No Allowances.
+                    </div>
+                </div>
+
+                <!-- Node 2: Bottom -->
+                <div class="timeline-node node-bottom" style="left: 35%;">
+                    <div class="node-circle active">
+                        <div class="node-glow"></div>
+                    </div>
+                    <div class="node-content">
+                        <h4 class="node-title">Virtual Round (8 Hours)</h4>
+                        <span class="node-date">03 January 2026</span>
+                        <div class="node-status text-uppercase">9 AM - 5 PM</div>
+                    </div>
+                    <div class="node-detail-hover">
+                        Online coding challenge. Surprise problem release at 9 AM.
+                    </div>
+                </div>
+
+                <!-- Node 3: Top -->
+                <div class="timeline-node node-top" style="left: 60%;">
+                    <div class="node-circle active">
+                        <div class="node-glow"></div>
+                    </div>
+                    <div class="node-content">
+                        <h4 class="node-title">Result Declaration</h4>
+                        <span class="node-date">07 January 2026</span>
+                        <div class="node-status text-uppercase">7 PM</div>
+                    </div>
+                    <div class="node-detail-hover">
+                        Top teams announced on registration page.
+                    </div>
+                </div>
+
+                <!-- Node 4: Bottom -->
+                <div class="timeline-node node-bottom" style="left: 85%;">
+                    <div class="node-circle active">
+                        <div class="node-glow"></div>
+                    </div>
+                    <div class="node-content">
+                        <h4 class="node-title">Final Round (24 Hours)</h4>
+                        <span class="node-date">31 Jan - 01 Feb 2026</span>
+                        <div class="node-status text-uppercase">On Site</div>
+                    </div>
+                    <div class="node-detail-hover">
+                        24-hour marathon at Institute Campus.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Decorative Grid Background -->
+        <div class="schedule-grid-bg"></div>
+    </section>
+
+    <!-- ================= RULES & GUIDELINES SECTION ================= -->
+    <section id="rules" class="rules-section">
+        <canvas id="rules-canvas"></canvas>
+        <div class="rules-container">
+
+            <div class="rules-header animate__animated animate__fadeInUp">
+                <h2 class="rules-title">Rules & Guidelines</h2>
+                <p class="rules-subtitle">Fair play, innovation, and collaboration define the competition.</p>
+            </div>
+
+            <div class="rules-grid">
+
+                <!-- Rule 1 -->
+                <div class="rule-card animate__animated animate__fadeInUp" style="animation-delay: 0.1s;">
+                    <span class="rule-number">Rule 01</span>
+                    <h3 class="rule-title-text">Team Formation</h3>
+                    <p class="rule-desc">Teams must consist of a minimum of 1 and a maximum of 4 members.
+                        Cross-institution teams are allowed.</p>
+                </div>
+
+                <!-- Rule 2 -->
+                <div class="rule-card animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+                    <span class="rule-number">Rule 02</span>
+                    <h3 class="rule-title-text">Registration</h3>
+                    <p class="rule-desc">Only the team leader needs to register. Team members must accept the invitation
+                        after registration confirmation.</p>
+                </div>
+
+                <!-- Rule 3 -->
+                <div class="rule-card animate__animated animate__fadeInUp" style="animation-delay: 0.3s;">
+                    <span class="rule-number">Rule 03</span>
+                    <h3 class="rule-title-text">Original Work</h3>
+                    <p class="rule-desc">All submissions must be developed during the hackathon period. Pre-built or
+                        reused projects are not allowed.</p>
+                </div>
+
+                <!-- Rule 4 -->
+                <div class="rule-card animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
+                    <span class="rule-number">Rule 04</span>
+                    <h3 class="rule-title-text">Two-Round Evaluation</h3>
+                    <p class="rule-desc">Round 1 is an online qualification round. Shortlisted teams advance to the
+                        offline final round at the campus.</p>
+                </div>
+
+                <!-- Rule 5 -->
+                <div class="rule-card animate__animated animate__fadeInUp" style="animation-delay: 0.5s;">
+                    <span class="rule-number">Rule 05</span>
+                    <h3 class="rule-title-text">Fair Usage</h3>
+                    <p class="rule-desc">Any open-source libraries or APIs used must be properly credited.</p>
+                </div>
+
+                <!-- Rule 6 -->
+                <div class="rule-card animate__animated animate__fadeInUp" style="animation-delay: 0.6s;">
+                    <span class="rule-number">Rule 06</span>
+                    <h3 class="rule-title-text">Code of Conduct</h3>
+                    <p class="rule-desc">Participants must maintain professional behavior and respect fellow
+                        participants, mentors, and organizers.</p>
+                </div>
+
+                <!-- Rule 7 -->
+                <div class="rule-card animate__animated animate__fadeInUp" style="animation-delay: 0.7s;">
+                    <span class="rule-number">Rule 07</span>
+                    <h3 class="rule-title-text">Submission Deadline</h3>
+                    <p class="rule-desc">Late submissions will not be evaluated under any circumstances.</p>
+                </div>
+
+                <!-- Rule 8 -->
+                <div class="rule-card animate__animated animate__fadeInUp" style="animation-delay: 0.8s;">
+                    <span class="rule-number">Rule 08</span>
+                    <h3 class="rule-title-text">Judging Criteria</h3>
+                    <p class="rule-desc">Projects will be evaluated based on innovation, feasibility, technical
+                        implementation, and presentation quality.</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <!-- ================= FACULTY MENTORS SECTION ================= -->
+    <div class="faculty-section-root">
+        <section id="faculty" class="faculty-section">
+            <div class="faculty-container">
+                <div class="faculty-header">
+                    <h2 class="faculty-title">Faculty Mentors</h2>
+                    <p class="faculty-subtitle">Meet the mentors guiding innovation at Odoo X Indus Hackathon ’26</p>
+                </div>
+
+                <!-- Carousel Wrapper -->
+                <div class="faculty-carousel-wrapper">
+                    <!-- The Track -->
+                    <div class="faculty-track">
+                        <!-- Duplicated items will be added via JS for infinite loop, 
+                             or we can manually duplicate if strictly HTML, 
+                             but JS is better for seamless GSAP. 
+                             For now, let's put initial cards. -->
+
+                        <!-- Card 1 -->
+                        <div class="faculty-card">
+                            <div class="faculty-card-glow"></div>
+                            <div class="faculty-img-box">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Faculty"
+                                    class="faculty-img">
+                            </div>
+                            <h4 class="faculty-name">Dr. A. Sharma</h4>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="faculty-card">
+                            <div class="faculty-card-glow"></div>
+                            <div class="faculty-img-box">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Faculty"
+                                    class="faculty-img">
+                            </div>
+                            <h4 class="faculty-name">Prof. P. Patel</h4>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="faculty-card">
+                            <div class="faculty-card-glow"></div>
+                            <div class="faculty-img-box">
+                                <img src="https://randomuser.me/api/portraits/men/86.jpg" alt="Faculty"
+                                    class="faculty-img">
+                            </div>
+                            <h4 class="faculty-name">Dr. R. Gupta</h4>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="faculty-card">
+                            <div class="faculty-card-glow"></div>
+                            <div class="faculty-img-box">
+                                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Faculty"
+                                    class="faculty-img">
+                            </div>
+                            <h4 class="faculty-name">Prof. S. Singh</h4>
+                        </div>
+
+                        <!-- Card 5 -->
+                        <div class="faculty-card">
+                            <div class="faculty-card-glow"></div>
+                            <div class="faculty-img-box">
+                                <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Faculty"
+                                    class="faculty-img">
+                            </div>
+                            <h4 class="faculty-name">Dr. V. Mehta</h4>
+                        </div>
+
+                        <!-- Card 6 -->
+                        <div class="faculty-card">
+                            <div class="faculty-card-glow"></div>
+                            <div class="faculty-img-box">
+                                <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="Faculty"
+                                    class="faculty-img">
+                            </div>
+                            <h4 class="faculty-name">Prof. K. Rao</h4>
+                        </div>
+
+                        <!-- Card 7 -->
+                        <div class="faculty-card">
+                            <div class="faculty-card-glow"></div>
+                            <div class="faculty-img-box">
+                                <img src="https://randomuser.me/api/portraits/men/11.jpg" alt="Faculty"
+                                    class="faculty-img">
+                            </div>
+                            <h4 class="faculty-name">Dr. J. Doe</h4>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ================= CORE TEAM SECTION (NEW) ================= -->
+    <section id="core-team" class="core-team-section">
+        <div class="team-container">
+            <!-- Header -->
+            <div class="team-header animate__animated animate__fadeInUp">
+                <h2 class="team-title">Meet Canopus <span>Core</span></h2>
+                <p class="team-subtitle">The visionaries and builders behind Odoo x Indus Hackathon '26.</p>
+            </div>
+
+            <!-- Carousel -->
+            <div class="team-carousel animate__animated animate__fadeInUp" style="animation-delay: 0.3s;">
+                <!-- Card 1 -->
+                <div class="team-card">
+                    <div class="team-img-box">
+                        <img src="https://picsum.photos/id/1027/400/600" alt="Team Member">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="member-name">Aarav Patel</h3>
+                        <span class="member-role">Lead Organizer</span>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="team-card">
+                    <div class="team-img-box">
+                        <img src="https://picsum.photos/id/1011/400/600" alt="Team Member">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="member-name">Sana Mir</h3>
+                        <span class="member-role">Technical Head</span>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="team-card">
+                    <div class="team-img-box">
+                        <img src="https://picsum.photos/id/338/400/600" alt="Team Member">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="member-name">Rohan Gupta</h3>
+                        <span class="member-role">Design Lead</span>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="team-card">
+                    <div class="team-img-box">
+                        <img src="https://picsum.photos/id/64/400/600" alt="Team Member">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="member-name">Meera Iyer</h3>
+                        <span class="member-role">Operations & Logistics</span>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="team-card">
+                    <div class="team-img-box">
+                        <img src="https://picsum.photos/id/177/400/600" alt="Team Member">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="member-name">Dev Kumar</h3>
+                        <span class="member-role">Sponsorship Lead</span>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </section>
+
+    <!-- ================= PRIZE SECTION ================= -->
+    <!-- Wrapped in .prize-section-root for CSS scoping -->
+    <div class="prize-section-root">
+        <section id="prizes" class="prize-section">
+            <div class="container position-relative z-2">
+                <div class="prize-header">
+                    <h2 class="prize-title">PRIZES</h2>
+                    <p class="prize-subtitle">Rewards for the most innovative and impactful solutions.</p>
+                </div>
+
+                <div class="prize-podium">
+                    <!-- 2nd Prize (Silver) -->
+                    <div class="prize-card silver prize-animate">
+                        <div class="prize-icon-box">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <h3 class="prize-rank">2nd Place</h3>
+                        <div class="prize-amount">₹35,000</div>
+                        <div class="prize-separator"></div>
+                        <p class="prize-desc">Standard Mentorship<br>Swag Kit</p>
+                    </div>
+
+                    <!-- 1st Prize (Gold) -->
+                    <div class="prize-card gold prize-animate">
+                        <div class="prize-icon-box">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3 class="prize-rank">1st Place</h3>
+                        <div class="prize-amount">₹45,000</div>
+                        <div class="prize-separator"></div>
+                        <p class="prize-desc">Premium Mentorship<br>Exclusive Merch<br>Internship Opportunity</p>
+                    </div>
+
+                    <!-- 3rd Prize (Bronze) -->
+                    <div class="prize-card bronze prize-animate">
+                        <div class="prize-icon-box">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h3 class="prize-rank">3rd Place</h3>
+                        <div class="prize-amount">₹25,000</div>
+                        <div class="prize-separator"></div>
+                        <p class="prize-desc">Swag Kit<br>Certification</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ================= REGISTER SECTION ================= -->
+    <!-- ================= VENUE SECTION ================= -->
+    <div class="venue-section-root">
+        <section id="venue" class="venue-section">
+            <div class="venue-container">
+
+                <div class="venue-header">
+                    <h2 class="venue-title">Venue</h2>
+                    <p class="venue-subtitle">Join us at the prestigious Indus Institute of Technology and Engineering
+                    </p>
+                </div>
+
+                <div class="venue-grid">
+
+                    <!-- Left Card: Info -->
+                    <div class="venue-card venue-info-card">
+                        <h3 class="venue-info-title">Indus University</h3>
+                        <span class="venue-info-subtitle">Bhanvar Building</span>
+
+                        <div class="info-block">
+                            <span class="info-label">Address</span>
+                            <p class="info-content">Bhanvar Building, Indus University Campus,<br>Ahmedabad, Gujarat</p>
+                        </div>
+
+                        <div class="info-block">
+                            <span class="info-label">Event Timing</span>
+                            <p class="info-content">April 11–13, 2026 | 4:00 PM onwards</p>
+                        </div>
+
+                        <div class="info-block">
+                            <span class="info-label">Facilities</span>
+                            <ul class="facility-list">
+                                <li class="facility-item"><i class="fas fa-wifi"></i> High-speed WiFi</li>
+                                <li class="facility-item"><i class="fas fa-bolt"></i> 24/7 Power backup</li>
+                                <li class="facility-item"><i class="fas fa-chair"></i> Comfortable workspaces</li>
+                                <li class="facility-item"><i class="fas fa-bed"></i> Sleeping areas (Token Based)</li>
+                                <li class="facility-item"><i class="fas fa-utensils"></i> Refreshments (Token Based)
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="info-block">
+                            <span class="info-label">How To Reach</span>
+                            <ul class="facility-list">
+                                <li class="facility-item"><i class="fas fa-plane"></i> 15 km from Airport</li>
+                                <li class="facility-item"><i class="fas fa-train"></i> 8 km from Railway Stn</li>
+                            </ul>
+                        </div>
+
+                        <a href="https://maps.app.goo.gl/tiMrCc7WgnDHVjBR7" class="btn-venue-cta">
+                            <i class="fas fa-map-marker-alt"></i> Get Directions
+                        </a>
+                    </div>
+
+                    <!-- Right Card: Map Placeholder -->
+                    <div class="venue-card map-placeholder-card">
+                        <div class="map-container">
+                            <div class="placeholder-icon">
+                                <i class="fas fa-map"></i>
+                            </div>
+                            <h4 class="placeholder-text">Map Preview Placeholder</h4>
+                            <p class="placeholder-subtext">Image will be added here</p>
+                        </div>
+                        <p class="map-caption">Indus University Campus Map</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ================= REGISTER SECTION ================= -->
+    <div class="register-section-root">
+        <section id="register" class="register-section">
+            <div class="register-container">
+
+                <!-- Header -->
+                <div class="register-header">
+                    <h2 class="register-title">Register for <br><span class="highlight">Odoo x Indus Hackathon
+                            '26</span></h2>
+                    <p class="register-subtitle">Join 500+ Innovators, 48 Hours of Coding, Infinite Possibilities.</p>
+                </div>
+
+                <!-- Asymmetrical Layout -->
+                <div class="register-grid">
+
+                    <!-- Highlights Card -->
+                    <div class="register-card highlights-card">
+                        <span class="card-label">Why Participate?</span>
+                        <ul class="highlight-list">
+                            <li class="highlight-item">
+                                <div class="highlight-icon"><i class="fas fa-ticket-alt"></i></div>
+                                <span class="highlight-text">Free Registration</span>
+                            </li>
+                            <li class="highlight-item">
+                                <div class="highlight-icon"><i class="fas fa-users"></i></div>
+                                <span class="highlight-text">Team Friendly </span>
+                            </li>
+                            <li class="highlight-item">
+                                <div class="highlight-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                                <span class="highlight-text">Expert Mentorship</span>
+                            </li>
+                            <li class="highlight-item">
+                                <div class="highlight-icon"><i class="fas fa-trophy"></i></div>
+                                <span class="highlight-text">Win Big Prizes</span>
+                            </li>
+                            <li class="highlight-item">
+                                <div class="highlight-icon"><i class="fas fa-utensils"></i></div>
+                                <span class="highlight-text">Free Swag & Food</span>
+                            </li>
+                            <li class="highlight-item">
+                                <div class="highlight-icon"><i class="fas fa-certificate"></i></div>
+                                <span class="highlight-text">Pro Certification</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Connect Card -->
+                    <div class="register-card connect-card">
+                        <span class="card-label">Build Your Network</span>
+                        <p class="connect-text">Join our official community group to find teammates, get updates, and
+                            connect with mentors before the event starts.</p>
+                        <a href="https://chat.whatsapp.com/COXPuUCV0G3CLAJeOLUwm1" class="btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i> Join WhatsApp Group
+                        </a>
+                    </div>
+
+                </div>
+
+                <!-- Main CTA -->
+                <div class="register-cta-wrapper">
+                    <a href="https://indusuni.ac.in/admission/admission.php" class="btn-register-main">
+                        Register Now
+                    </a>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <!-- ================= FAQ SECTION ================= -->
+    <div class="faq-section-root">
+        <section id="faq" class="faq-section">
+            <div class="faq-bg-shape faq-shape-1"></div>
+            <div class="faq-bg-shape faq-shape-2"></div>
+
+            <div class="faq-container">
+                <div class="faq-header">
+                    <h2 class="faq-title">Frequently Asked Questions</h2>
+                    <p class="faq-subtitle">Everything you need to know before participating.</p>
+                </div>
+
+                <div class="faq-list">
+
+                    <!-- Q1 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="question-text">1. What is the format of the hackathon?</span>
+                            <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>The hackathon consists of two rounds. The first round is an online qualification
+                                challenge where teams solve a problem remotely. Shortlisted teams advance to the second
+                                round, which is an offline final round conducted at the campus.</p>
+                        </div>
+                    </div>
+
+                    <!-- Q2 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="question-text">2. How many members can be in a team?</span>
+                            <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Each team must have a minimum of 1 member and a maximum of 4 members.</p>
+                        </div>
+                    </div>
+
+                    <!-- Q3 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="question-text">3. Is registration free?</span>
+                            <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, registration is completely free and mandatory for participation.</p>
+                        </div>
+                    </div>
+
+                    <!-- Q4 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="question-text">4. Who needs to register for the team?</span>
+                            <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Only the team leader needs to complete the registration. Team members will receive an
+                                invitation to join the team after registration.</p>
+                        </div>
+                    </div>
+
+                    <!-- Q5 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="question-text">5. What happens in the online qualification round?</span>
+                            <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Teams will receive a surprise problem statement and will have a fixed time window to
+                                submit their solution. Only the team leader can submit the final response.</p>
+                        </div>
+                    </div>
+
+                    <!-- Q6 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="question-text">6. How are teams selected for the offline final round?</span>
+                            <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Top-performing teams from the online round will be shortlisted based on evaluation
+                                criteria such as innovation, feasibility, and problem-solving approach.</p>
+                        </div>
+                    </div>
+
+                    <!-- Q7 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="question-text">7. Do participants need to bring their own laptops for the
+                                offline round?</span>
+                            <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, all shortlisted teams must bring their own laptops and required tools for the final
+                                round.</p>
+                        </div>
+                    </div>
+
+                    <!-- Q8 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="question-text">8. Will accommodation or travel expenses be provided?</span>
+                            <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>No travel or accommodation allowances will be provided for this event.</p>
+                        </div>
+                    </div>
+
+                    <!-- Q9 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="question-text">9. Can students from different institutions form a team?</span>
+                            <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, cross-institution teams are allowed and encouraged.</p>
+                        </div>
+                    </div>
+
+                    <!-- Q10 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="question-text">10. How will important updates be communicated?</span>
+                            <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>All official updates will be communicated via email to the team leader.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <div class="footer-root">
+        <footer id="footer" class="footer-section">
+            <div class="footer-container">
+
+                <!-- Main Grid -->
+                <div class="footer-grid">
+
+                    <!-- Col 1: Brand -->
+                    <div class="footer-brand">
+                        <h3>Odoo X Indus Hackathon '26</h3>
+                        <p class="footer-desc">The ultimate hackathon experience for innovators and problem solvers.
+                            Join us to build the future.</p>
+
+                        <div class="footer-socials">
+                            <a href="https://www.instagram.com/iuhackathon_cse?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                                class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/school/indus-university-ahmedabad/posts/?feedView=all"
+                                class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Col 2: Quick Links -->
+                    <div class="footer-links">
+                        <h4 class="footer-heading">Quick Links</h4>
+                        <ul class="footer-links-list">
+                            <li class="footer-link-item"><a href="#hero" class="footer-link">Home</a></li>
+                            <li class="footer-link-item"><a href="#about" class="footer-link">About</a></li>
+                            <li class="footer-link-item"><a href="#schedule" class="footer-link">Schedule</a></li>
+                            <li class="footer-link-item"><a href="#venue" class="footer-link">Venue</a></li>
+                            <li class="footer-link-item"><a href="#register" class="footer-link">Register</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Col 3: Contact -->
+                    <div class="footer-contact">
+                        <h4 class="footer-heading">Contact</h4>
+                        <ul class="footer-contact-list">
+                            <li class="contact-item">
+                                <i class="fas fa-envelope contact-icon"></i>
+                                <span class="contact-text"><a
+                                        href="mailto:info@indushackathon.com">info@indushackathon.com</a></span>
+                            </li>
+                            <li class="contact-item">
+                                <i class="fas fa-phone contact-icon"></i>
+                                <span class="contact-text"><a href="tel:+919000000000">+91 90000 00000</a></span>
+                            </li>
+                            <li class="contact-item">
+                                <i class="fas fa-map-marker-alt contact-icon"></i>
+                                <span class="contact-text">Indus University, Ahmedabad,<br>Gujarat, India</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Bottom Bar -->
+                <div class="footer-bottom">
+                    <p class="copyright">© 2026 Odoo X Indus Hackathon. All rights reserved.</p>
+                    <span class="tagline">Innovate. Build. Impact.</span>
+
+                    <button id="scrollToTop" class="scroll-top-btn" title="Back to Top">
+                        <i class="fas fa-arrow-up"></i>
+                    </button>
+                </div>
+
+            </div>
+        </footer>
+    </div>
+
+    <!-- JS Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

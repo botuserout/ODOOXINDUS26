@@ -1,0 +1,151 @@
+/* =========================================
+   PARTICLE PRELOADER (THEMED)
+   Theme: Odoo X Indus (Deep Purple/Indigo)
+========================================= */
+
+/* Main Container - Fullscreen Overlay */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Theme Requirements: Deep Purple / Indigo Gradient */
+    background: linear-gradient(135deg, #110b1d 0%, #241235 50%, #1a1025 100%);
+    z-index: 9999;
+    overflow: hidden;
+    /* Transition for smooth fade-out */
+    transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+}
+
+#preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Particle Containers */
+#particles-background,
+#particles-foreground {
+    position: absolute;
+    left: -51%;
+    top: -51%;
+    width: 202%;
+    height: 202%;
+    transform: scale3d(0.5, 0.5, 1);
+    z-index: 1;
+    /* Background behind loader */
+}
+
+#particles-background {
+    /* Subtle overlay for depth */
+    background: radial-gradient(circle at center, rgba(126, 34, 206, 0.15) 0%, transparent 70%);
+}
+
+#particles-foreground {
+    z-index: 2;
+    /* Foreground slightly above */
+}
+
+/* Centering Box */
+.vertical-centered-box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    z-index: 10;
+    /* Above particles */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vertical-centered-box .content {
+    box-sizing: border-box;
+    display: inline-block;
+    text-align: left;
+    font-size: 0;
+    position: relative;
+}
+
+/* Logo SVG */
+.loader-logo {
+    width: 60px;
+    /* Adjust size to fit inside circle */
+    height: auto;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+    display: block;
+}
+
+/* Loader Circle (Outer) */
+.loader-circle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    /* Updated to Soft Violet/Indigo Tint */
+    box-shadow: inset 0 0 0 1px rgba(168, 85, 247, 0.3);
+    /* #a855f7 opacity */
+    margin-left: -60px;
+    margin-top: -60px;
+    /* Optional: Subtle pulse if desired, but keeping code minimal as requested */
+}
+
+/* Loader Line Mask (Rotation Wrapper) */
+.loader-line-mask {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 60px;
+    height: 120px;
+    margin-left: -60px;
+    margin-top: -60px;
+    overflow: hidden;
+    transform-origin: 60px 60px;
+    -webkit-mask-image: linear-gradient(top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    animation: rotate 1.2s infinite linear;
+}
+
+/* Loader Line (The Rotating Stroke) */
+.loader-line-mask .loader-line {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    /* Theme Requirement: Primary Brand Accent */
+    box-shadow: inset 0 0 0 1px #a855f7;
+    /* Violet/Purple Accent */
+}
+
+/* Animations */
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.25;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

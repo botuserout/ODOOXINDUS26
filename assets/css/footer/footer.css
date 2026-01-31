@@ -1,0 +1,292 @@
+/* =========================================
+   FOOTER SECTION
+   Scoped to .footer-root
+   Theme: Matching Site Dark Gradient & Glass
+========================================= */
+
+.footer-root {
+    --footer-bg-gradient: linear-gradient(180deg, #1a1025 0%, #110b1d 100%);
+    --footer-text-primary: #ffffff;
+    --footer-text-secondary: #9ca3af;
+    --footer-accent: #a855f7;
+    /* Purple */
+    --footer-accent-hover: #d8b4fe;
+    /* Light Lavender */
+    --footer-border: rgba(255, 255, 255, 0.1);
+    --footer-glass-bg: rgba(255, 255, 255, 0.05);
+}
+
+.footer-section {
+    background: var(--footer-bg-gradient);
+    color: var(--footer-text-primary);
+    padding: 80px 0 30px;
+    position: relative;
+    font-family: 'Inter', sans-serif;
+    border-top: 1px solid var(--footer-border);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Main Grid --- */
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+/* Common Column Headers */
+.footer-heading {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: var(--footer-text-primary);
+    position: relative;
+    display: inline-block;
+}
+
+.footer-heading::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 40px;
+    height: 3px;
+    background: var(--footer-accent);
+    border-radius: 2px;
+}
+
+/* 1. Brand Column */
+.footer-brand h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    background: linear-gradient(90deg, #fff, var(--footer-accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.footer-desc {
+    color: var(--footer-text-secondary);
+    line-height: 1.6;
+    margin-bottom: 25px;
+    max-width: 350px;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 15px;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    background: var(--footer-glass-bg);
+    border: 1px solid var(--footer-border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--footer-text-primary);
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: var(--footer-accent);
+    color: #fff;
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 5px 15px rgba(168, 85, 247, 0.4);
+    border-color: transparent;
+}
+
+/* 2. Quick Links Column */
+.footer-links-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-link-item {
+    margin-bottom: 12px;
+}
+
+.footer-link {
+    color: var(--footer-text-secondary);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-link::before {
+    content: '›';
+    color: var(--footer-accent);
+    font-weight: bold;
+    opacity: 0;
+    transform: translateX(-5px);
+    transition: all 0.2s ease;
+}
+
+.footer-link:hover {
+    color: var(--footer-accent-hover);
+    padding-left: 5px;
+}
+
+.footer-link:hover::before {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* 3. Contact Column */
+.footer-contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+    color: var(--footer-text-secondary);
+}
+
+.contact-icon {
+    color: var(--footer-accent);
+    font-size: 1.2rem;
+    margin-top: 3px;
+}
+
+.contact-text {
+    line-height: 1.5;
+}
+
+.contact-text a {
+    color: var(--footer-text-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.contact-text a:hover {
+    color: var(--footer-accent-hover);
+}
+
+/* --- Bottom Bar --- */
+.footer-bottom {
+    border-top: 1px solid var(--footer-border);
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.copyright {
+    color: var(--footer-text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.tagline {
+    font-size: 0.85rem;
+    color: var(--footer-accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+/* Scroll To Top Button */
+.scroll-top-btn {
+    position: absolute;
+    right: 0;
+    top: -25px;
+    /* Halfway overlapping the line */
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--footer-accent), #7c3aed);
+    border-radius: 50%;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+    /* Initially hidden */
+}
+
+.scroll-top-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(124, 58, 237, 0.5);
+}
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-heading::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .footer-brand,
+    .footer-links,
+    .footer-contact {
+        grid-column: span 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-contact-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-item {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 25px;
+    }
+
+    .scroll-top-btn {
+        position: relative;
+        top: 0;
+        right: 0;
+        margin-top: 20px;
+    }
+}

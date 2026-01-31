@@ -1,0 +1,278 @@
+/* =========================================
+   NEON CONSOLE GAME THEME
+   Scoped to .neon-game-root to prevent leakage
+========================================= */
+
+/* --- Scoped Variables (Matching About Theme) --- */
+.neon-game-root {
+    --neon-primary: #7e22ce;
+    /* About Accent Purple */
+    --neon-secondary: #6b21a8;
+    /* Darker Purple */
+    --neon-accent: #d8b4fe;
+    /* About Accent Light */
+    --neon-blue: #17A2B8;
+    --neon-red: #DC3545;
+
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    /* About Glass BG */
+    --glass-border: rgba(255, 255, 255, 0.08);
+    /* About Glass Border */
+    --glass-shine: rgba(255, 255, 255, 0.05);
+
+    --console-shadow: 0 0 40px rgba(126, 34, 206, 0.2);
+    --grid-gap: 12px;
+}
+
+/* --- Section Background (Match About) --- */
+#features.features-section {
+    /* This will be overridden by style.css, but keeping for specificity */
+    background: linear-gradient(180deg, #110b1d 0%, #241235 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 100px 0;
+}
+
+#features::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 600px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(126, 34, 206, 0.15) 0%, transparent 70%);
+    filter: blur(80px);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* --- Game Container --- */
+.neon-game-root {
+    position: relative;
+    z-index: 5;
+    padding: 10px;
+    /* Reduced padding */
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* The Glassy Panel (Match About Glass Cards) */
+.console-frame {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.5),
+        inset 0 0 0 1px var(--glass-shine),
+        0 0 30px rgba(126, 34, 206, 0.15);
+    position: relative;
+    overflow: visible;
+    transition: box-shadow 0.3s ease;
+}
+
+.console-frame:hover {
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.6),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.1),
+        0 0 50px rgba(126, 34, 206, 0.3);
+}
+
+/* --- Game Header --- */
+.game-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.ttt-status {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    padding: 6px 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* --- Grid System --- */
+.ttt-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--grid-gap);
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* --- Tiles (Cells) --- */
+.ttt-cell {
+    aspect-ratio: 1;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    color: transparent;
+}
+
+.ttt-cell:hover:not(.x):not(.o) {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow:
+        inset 0 0 15px rgba(255, 255, 255, 0.05),
+        0 0 15px rgba(126, 34, 206, 0.4);
+    transform: translateY(-2px);
+}
+
+.ttt-cell:active {
+    transform: scale(0.98);
+}
+
+.ttt-cell.x,
+.ttt-cell.o {
+    cursor: default;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.ttt-cell.x {
+    color: var(--neon-red);
+    text-shadow: 0 0 20px var(--neon-red);
+    border-color: rgba(220, 53, 69, 0.3);
+}
+
+.ttt-cell.o {
+    color: var(--neon-blue);
+    text-shadow: 0 0 20px var(--neon-blue);
+    border-color: rgba(23, 162, 184, 0.3);
+}
+
+/* --- Reset Button (About Purple Gradient) --- */
+#ttt-reset {
+    background: linear-gradient(135deg, var(--neon-primary) 0%, var(--neon-secondary) 100%);
+    border: none;
+    color: #fff;
+    font-family: 'Space Grotesk', sans-serif;
+    padding: 10px 24px;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-weight: 600;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(126, 34, 206, 0.3);
+}
+
+#ttt-reset:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(126, 34, 206, 0.5);
+}
+
+/* --- Decorative Icons (Floating) --- */
+.decor-icon {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.1);
+    /* Slightly more visible */
+    z-index: 10;
+    /* Above frame bg, but below grid? Grid is z-index 2 */
+    /* Wait, console frame has z-index? No, neon-game-root is z-index 5. 
+       If icons are inside frame, they are relative to frame.
+       If we want them to overlap OUTSIDE, they need to be larger or positioned negatively. */
+    animation: floatIcon 6s ease-in-out infinite;
+    pointer-events: auto;
+    /* Allow hover */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.decor-icon:hover {
+    color: rgba(255, 255, 255, 0.6);
+    text-shadow: 0 0 15px rgba(135, 90, 123, 0.8);
+    transform: scale(1.1) rotate(0deg) !important;
+    /* Override float rotate */
+    z-index: 20;
+}
+
+.decor-icon i {
+    font-size: inherit;
+}
+
+/* Positioning relative to .console-frame */
+.icon-pos-1 {
+    top: -30px;
+    left: -30px;
+    font-size: 4rem;
+    animation-delay: 0s;
+}
+
+.icon-pos-2 {
+    bottom: -20px;
+    right: -20px;
+    font-size: 5rem;
+    animation-delay: 2s;
+}
+
+.icon-pos-3 {
+    top: 10%;
+    right: -50px;
+    font-size: 3.5rem;
+    animation-delay: 4s;
+}
+
+.icon-pos-4 {
+    bottom: 20%;
+    left: -40px;
+    font-size: 3rem;
+    animation-delay: 1s;
+}
+
+@keyframes floatIcon {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+}
+
+/* --- Mobile --- */
+@media (max-width: 768px) {
+    .console-frame {
+        padding: 20px;
+    }
+
+    .ttt-cell {
+        font-size: 2rem;
+    }
+
+    /* Hide some icons or reduce size */
+    .icon-pos-2,
+    .icon-pos-3 {
+        display: none;
+    }
+
+    .icon-pos-1,
+    .icon-pos-4 {
+        font-size: 2.5rem;
+        opacity: 0.2;
+    }
+
+    .neon-game-root {
+        padding: 5px;
+    }
+}

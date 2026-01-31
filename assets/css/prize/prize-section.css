@@ -1,0 +1,295 @@
+/* =========================================
+   PRIZE SECTION (Themed to About)
+   Scoped to .prize-section-root
+========================================= */
+
+/* --- Scoped Variables (Matching About) --- */
+.prize-section-root {
+    --prize-bg-gradient: linear-gradient(180deg, #110b1d 0%, #241235 100%);
+    --prize-accent-purple: #7e22ce;
+    /* About Accent */
+    --prize-accent-light: #d8b4fe;
+    /* About Accent Light */
+    --prize-glass-bg: rgba(255, 255, 255, 0.03);
+    --prize-glass-border: rgba(255, 255, 255, 0.08);
+    --prize-card-hover: rgba(126, 34, 206, 0.15);
+    --prize-text-primary: #ffffff;
+    --prize-text-secondary: #e9d5ff;
+}
+
+/* --- Section Container --- */
+.prize-section {
+    background: var(--prize-bg-gradient);
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Background Depth Elements (Purple Glow) */
+.prize-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 600px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(126, 34, 206, 0.15) 0%, transparent 70%);
+    filter: blur(80px);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.prize-header {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 2;
+}
+
+.prize-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 3rem;
+    color: var(--prize-text-primary);
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+    display: inline-block;
+    position: relative;
+}
+
+/* Title underline decoration */
+.prize-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--prize-accent-purple);
+    margin: 10px auto 0;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(126, 34, 206, 0.5);
+}
+
+.prize-subtitle {
+    font-size: 1.25rem;
+    color: var(--prize-text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 300;
+}
+
+/* --- Podium Layout --- */
+.prize-podium {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    padding-bottom: 40px;
+}
+
+/* --- Prize Card (Glass Style Matching About) --- */
+.prize-card {
+    background: var(--prize-glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--prize-glass-border);
+    border-radius: 24px;
+    padding: 40px 30px;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    z-index: 5;
+}
+
+/* Hover Effect (About Style) */
+.prize-card:hover {
+    transform: translateY(-5px);
+    background: var(--prize-card-hover);
+    border-color: var(--prize-accent-purple);
+    box-shadow: 0 15px 40px rgba(126, 34, 206, 0.3);
+    z-index: 20;
+}
+
+/* --- Hierarchy Styles --- */
+
+/* 1st Place (Center, Larger) */
+.prize-card.gold {
+    order: 2;
+    flex: 1.3;
+    padding: 50px 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(126, 34, 206, 0.3);
+    z-index: 10;
+    box-shadow: 0 20px 50px rgba(126, 34, 206, 0.2);
+}
+
+/* 2nd & 3rd Place (Sidekicks) */
+.prize-card.silver {
+    order: 1;
+    transform: translateY(20px) scale(0.95);
+}
+
+.prize-card.silver:hover {
+    transform: translateY(15px) scale(0.97);
+}
+
+.prize-card.bronze {
+    order: 3;
+    transform: translateY(20px) scale(0.95);
+}
+
+.prize-card.bronze:hover {
+    transform: translateY(15px) scale(0.97);
+}
+
+/* --- Card Elements --- */
+
+.prize-icon-box {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 24px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+/* Floating animation inside card */
+.prize-card:hover .prize-icon-box {
+    animation: bounceIcon 1s ease infinite alternate;
+}
+
+@keyframes bounceIcon {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-5px);
+    }
+}
+
+/* Icon Colors (Keeping medal colors but with better contrast) */
+.gold .prize-icon-box i {
+    background: linear-gradient(135deg, #FFD700, #FDB931);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 8px rgba(255, 215, 0, 0.5));
+}
+
+.silver .prize-icon-box i {
+    background: linear-gradient(135deg, #E8E8E8, #C0C0C0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 8px rgba(192, 192, 192, 0.5));
+}
+
+.bronze .prize-icon-box i {
+    background: linear-gradient(135deg, #CD7F32, #B87333);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 8px rgba(205, 127, 50, 0.5));
+}
+
+.prize-rank {
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--prize-text-secondary);
+    margin-bottom: 5px;
+}
+
+.gold .prize-rank {
+    font-size: 1.5rem;
+    color: var(--prize-accent-light);
+}
+
+.prize-amount {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--prize-text-primary);
+    margin-bottom: 20px;
+}
+
+.gold .prize-amount {
+    font-size: 3.5rem;
+    background: linear-gradient(135deg, #ffffff, var(--prize-accent-light));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.prize-separator {
+    width: 40px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.2);
+    margin-bottom: 20px;
+}
+
+.prize-desc {
+    font-size: 0.95rem;
+    color: var(--prize-text-secondary);
+    line-height: 1.6;
+}
+
+/* --- Mobile / Tablet --- */
+@media (max-width: 992px) {
+    .prize-podium {
+        gap: 15px;
+    }
+
+    .prize-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .prize-podium {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        max-width: 400px;
+    }
+
+    .prize-card {
+        width: 100%;
+        transform: none !important;
+        order: unset !important;
+    }
+
+    /* Order for mobile: Gold first, then Silver, Bronze */
+    .prize-card.gold {
+        order: 1 !important;
+        transform: scale(1.05) !important;
+    }
+
+    .prize-card.silver {
+        order: 2 !important;
+    }
+
+    .prize-card.bronze {
+        order: 3 !important;
+    }
+}

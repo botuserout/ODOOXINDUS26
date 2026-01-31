@@ -1,0 +1,295 @@
+/* =========================================
+   REGISTER / CTA SECTION
+   Scoped to .register-section-root
+   Design: Asymmetrical Glass Panels
+========================================= */
+
+.register-section-root {
+    --reg-bg-gradient: linear-gradient(135deg, #2c1a32 0%, #1a1025 100%);
+    --reg-accent-purple: #a855f7;
+    /* Lavender/Purple */
+    --reg-accent-dark: #7e22ce;
+    --reg-glass-surface: rgba(255, 255, 255, 0.05);
+    --reg-glass-border: rgba(255, 255, 255, 0.1);
+    --reg-text-main: #ffffff;
+    --reg-text-muted: #d1d5db;
+    --reg-whatsapp-green: #25D366;
+    --reg-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.register-section {
+    background: var(--reg-bg-gradient);
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+    color: var(--reg-text-main);
+}
+
+/* Ambient Background Glows */
+.register-section::before,
+.register-section::after {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.15;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.register-section::before {
+    background: var(--reg-accent-purple);
+    top: -100px;
+    left: -100px;
+}
+
+.register-section::after {
+    background: #4f46e5;
+    /* Indigo hint */
+    bottom: -100px;
+    right: -100px;
+}
+
+.register-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Header --- */
+.register-header {
+    text-align: center;
+    margin-bottom: 60px;
+    opacity: 1;
+    /* GSAP will handle anim */
+}
+
+.register-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    letter-spacing: -0.02em;
+}
+
+.register-title .highlight {
+    background: linear-gradient(to right, #c084fc, #a855f7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    /* standard compliant */
+    -webkit-text-fill-color: transparent;
+}
+
+.register-subtitle {
+    font-size: 1.2rem;
+    color: var(--reg-text-muted);
+    font-weight: 400;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- Asymmetrical Layout --- */
+.register-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+/* Common Card Styles */
+.register-card {
+    background: var(--reg-glass-surface);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--reg-glass-border);
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: var(--reg-shadow);
+    transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.register-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(168, 85, 247, 0.3);
+}
+
+/* Left Card: Highlights */
+.highlights-card {
+    padding-right: 20px;
+}
+
+.card-label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--reg-accent-purple);
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.highlight-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.highlight-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(168, 85, 247, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--reg-accent-purple);
+    flex-shrink: 0;
+}
+
+.highlight-text {
+    font-weight: 500;
+    font-size: 1.05rem;
+}
+
+/* Right Card: Connect */
+.connect-card {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transform: translateY(30px);
+    /* Visual offset offset */
+}
+
+/* Fix hover transform conflict for offset card */
+.connect-card:hover {
+    transform: translateY(25px);
+    /* Lift slightly from offset */
+}
+
+.connect-text {
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    color: var(--reg-text-muted);
+    line-height: 1.5;
+}
+
+/* Buttons */
+.btn-whatsapp {
+    background: rgba(37, 211, 102, 0.1);
+    border: 1px solid var(--reg-whatsapp-green);
+    color: var(--reg-whatsapp-green);
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    width: 100%;
+}
+
+.btn-whatsapp:hover {
+    background: var(--reg-whatsapp-green);
+    color: #fff;
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.3);
+}
+
+/* Bottom Main CTA */
+.register-cta-wrapper {
+    margin-top: 80px;
+    text-align: center;
+}
+
+.btn-register-main {
+    background: linear-gradient(to right, #7e22ce, #a855f7);
+    color: white;
+    padding: 18px 50px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(126, 34, 206, 0.4);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-register-main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: 0.5s;
+}
+
+.btn-register-main:hover {
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: 0 20px 40px rgba(126, 34, 206, 0.5);
+}
+
+.btn-register-main:hover::before {
+    left: 100%;
+}
+
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+    .register-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .connect-card {
+        transform: translateY(0);
+        text-align: center;
+    }
+
+    .connect-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .register-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .register-section {
+        padding: 80px 0;
+    }
+
+    .highlight-list {
+        grid-template-columns: 1fr;
+    }
+
+    .btn-register-main {
+        width: 100%;
+        padding: 16px 20px;
+    }
+}
