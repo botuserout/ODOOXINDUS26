@@ -19,7 +19,9 @@ $(document).ready(function () {
 
     function hidePreloader() {
         var preloader = $("#preloader");
-        if (preloader.length) {
+        if (preloader.length && !preloader.hasClass("hidden-trigger-started")) {
+            preloader.addClass("hidden-trigger-started"); // Prevent double trigger
+
             // Explicitly unlock body scrolling just in case
             $("body").css("overflow", "");
 
@@ -32,6 +34,11 @@ $(document).ready(function () {
             }, 800);
         }
     }
+
+    // Safety Dog: Force remove after 5 seconds if load hangs
+    setTimeout(function () {
+        hidePreloader();
+    }, 5000);
 
     // 1. Initial Load
     $(window).on("load", function () {
@@ -50,6 +57,13 @@ $(document).ready(function () {
             hidePreloader();
         }, 1500); // Wait for particles to show off a bit
     });
+
+    // 1.5. Check if page is ALREADY loaded (Edge case check)
+    if (document.readyState === "complete") {
+        setTimeout(() => {
+            hidePreloader();
+        }, 500);
+    }
 
     // 2. Browser Back/Forward Cache Restoration (bfcache)
     window.addEventListener('pageshow', function (event) {
