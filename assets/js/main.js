@@ -4,6 +4,26 @@ $(document).ready(function () {
     /* =========================================
        PRELOADER LOGIC (Handled by particle-loader.css & particleground)
     ========================================= */
+    /* =========================================
+       PRELOADER LOGIC (Improved for Lifecycle & Cache)
+    ========================================= */
+    function hidePreloader() {
+        var preloader = $("#preloader");
+        if (preloader.length) {
+            // Explicitly unlock body scrolling just in case
+            $("body").css("overflow", "");
+
+            // Start fade out
+            preloader.addClass("hidden");
+
+            // Remove from DOM after transition
+            setTimeout(function() {
+                preloader.remove();
+            }, 800);
+        }
+    }
+
+    // 1. Initial Load
     $(window).on("load", function () {
         // Force scroll to top on load/refresh
         if ('scrollRestoration' in history) {
@@ -12,12 +32,17 @@ $(document).ready(function () {
         window.scrollTo(0, 0);
 
         setTimeout(() => {
-            $("#preloader").addClass("hidden");
-            // Remove from DOM after transition
-            setTimeout(() => {
-                $("#preloader").remove();
-            }, 800);
+            hidePreloader();
         }, 1500); // Wait for particles to show off a bit
+    });
+
+    // 2. Browser Back/Forward Cache Restoration (bfcache)
+    window.addEventListener('pageshow', function(event) {
+        if (event.persisted) {
+            // Page was restored from cache (bfcache)
+            // Force hide immediately or run smooth hide
+            hidePreloader();
+        }
     });
 
     /* =========================================
