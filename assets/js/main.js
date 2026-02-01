@@ -7,6 +7,16 @@ $(document).ready(function () {
     /* =========================================
        PRELOADER LOGIC (Improved for Lifecycle & Cache)
     ========================================= */
+
+    // Mobile Fallback: Detect mobile device
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
+
+    // Check session storage to prevent sticky preloader on mobile reload/back
+    if (isMobile && sessionStorage.getItem("mobile_preloader_shown")) {
+        $("#preloader").remove();
+        $("body").css("overflow", ""); // Ensure scroll is unlocked
+    }
+
     function hidePreloader() {
         var preloader = $("#preloader");
         if (preloader.length) {
@@ -17,7 +27,7 @@ $(document).ready(function () {
             preloader.addClass("hidden");
 
             // Remove from DOM after transition
-            setTimeout(function() {
+            setTimeout(function () {
                 preloader.remove();
             }, 800);
         }
@@ -31,13 +41,18 @@ $(document).ready(function () {
         }
         window.scrollTo(0, 0);
 
+        // Mark preloader as shown for mobile users
+        if (isMobile) {
+            sessionStorage.setItem("mobile_preloader_shown", "true");
+        }
+
         setTimeout(() => {
             hidePreloader();
         }, 1500); // Wait for particles to show off a bit
     });
 
     // 2. Browser Back/Forward Cache Restoration (bfcache)
-    window.addEventListener('pageshow', function(event) {
+    window.addEventListener('pageshow', function (event) {
         if (event.persisted) {
             // Page was restored from cache (bfcache)
             // Force hide immediately or run smooth hide
