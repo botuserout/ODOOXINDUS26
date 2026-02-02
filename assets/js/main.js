@@ -1021,7 +1021,6 @@ $(document).ready(function () {
             { name: "Asst. Prof. Hiren Mer", role: "Program Coordinator", image: "assets/img/WebP faculty Photo/Mr. Hiren Mer.webp" },
             { name: "Dr. Ashwin Patani", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ashwin_Patani.webp" },
             { name: "Ms. Madhvi Bera", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ms. Madhavi Bera.webp" },
-            { name: "Dr. Sheetal Pandya", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Dr. Sheetal Pandya1.webp" },
             { name: "Mr. Parth Nirmal", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Mr. Parth Nirmal .webp" },
             { name: "Ms. Urvi Rabara", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ms urvi .webp" },
             { name: "Ms. Shruti Jaiswal", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ms.Shruti Jaiswal.webp" },
@@ -1032,9 +1031,16 @@ $(document).ready(function () {
             { name: "Ms. Sweta Rathod", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ms. Sweta Rathod.webp" },
             { name: "Ms. Anjali Chopra", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ms Anjali.webp" },
             { name: "Mr. Vatsal Suthar", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Mr Vatsal.webp" },
-            { name: "Mr. Prejesh Pal Singh", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ms prejesh pal.webp" },
             { name: "Ms. Zarna Kotak", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ms. Zarna.webp" },
-            { name: "Ms. Jenisha Patel", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ms jenisha.webp" }
+            { name: "Ms. Krupaba Chudasma", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ms. Krupaba Chudasma.webp" },
+            { name: "Ms. Shweta Bhramhbhatt", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Dr. Shweta Bhramhbhatt.jpg" },
+            { name: "Ms. Namrata Bhramhbhatt", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ms. Namrata Bhramhbhatt.webp" },
+            { name: "Ms. Riddhi Harsora", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ms. Riddhi Harsora.webp" },
+            { name: "Ms. Ruchi Patel", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ms. Ruchi Patel_2026.webp" },
+            { name: "Ms. Rupal Kharya", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ms. Rupal Kharya.webp" },
+            { name: "Ms. Vrushali Rajvanshi", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ms. Vrushali Rajvanshi_2026.webp" },
+            { name: "Mr. Deep Paun", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Mr. Deep Paun-2.png" },
+            { name: "Mr. Divyang Makwana", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Mr. Divyang Makwana.jpg" },
         ];
 
         // Clear placeholder HTML
