@@ -548,17 +548,17 @@ $(document).ready(function () {
     }
 
     /* =========================================
-       TIC-TAC-TOE MINI GAME
+       TIC-TAC-TOE MINI GAME (Player vs AI Algorithm)
     ========================================= */
     const board = document.getElementById("ttt-board");
     const cells = document.querySelectorAll(".ttt-cell");
     const statusDisplay = document.querySelector(".ttt-status");
     const resetButton = document.getElementById("ttt-reset");
-    const playerIndicator = document.getElementById("current-player");
 
     if (board && cells.length > 0) {
         let gameActive = true;
-        let currentPlayer = "O";
+        let currentPlayer = "O"; // Human is O
+        let aiPlayer = "X";      // AI is X
         let gameState = ["", "", "", "", "", "", "", "", ""];
 
         const winningConditions = [
@@ -571,7 +571,8 @@ $(document).ready(function () {
             const clickedCell = clickedCellEvent.target;
             const clickedCellIndex = parseInt(clickedCell.getAttribute('data-index'));
 
-            if (gameState[clickedCellIndex] !== "" || !gameActive) {
+            // Ignore click if cell taken, game over, or if it's AI's turn
+            if (gameState[clickedCellIndex] !== "" || !gameActive || currentPlayer === aiPlayer) {
                 return;
             }
 
@@ -583,7 +584,6 @@ $(document).ready(function () {
             gameState[clickedCellIndex] = currentPlayer;
             clickedCell.innerText = currentPlayer;
             clickedCell.classList.add(currentPlayer.toLowerCase());
-            // Add slight pop animation via CSS transition or class
             clickedCell.style.transform = "scale(1.1)";
             setTimeout(() => clickedCell.style.transform = "scale(1)", 200);
         }
@@ -598,9 +598,7 @@ $(document).ready(function () {
                 let b = gameState[winCondition[1]];
                 let c = gameState[winCondition[2]];
 
-                if (a === '' || b === '' || c === '') {
-                    continue;
-                }
+                if (a === '' || b === '' || c === '') continue;
                 if (a === b && b === c) {
                     roundWon = true;
                     winningcells = winCondition;
@@ -609,20 +607,21 @@ $(document).ready(function () {
             }
 
             if (roundWon) {
-                statusDisplay.innerHTML = `SYSTEM ALERT: <span style="color: ${currentPlayer === 'X' ? 'var(--status-error)' : 'var(--status-info)'}">Player ${currentPlayer} Wins!</span>`;
+                const winnerText = currentPlayer === aiPlayer ? "SYSTEM WINS" : "YOU WIN";
+                const colorVar = currentPlayer === aiPlayer ? 'var(--status-error)' : 'var(--status-info)'; // Red for AI, Blue for Player
+                statusDisplay.innerHTML = `SYSTEM ALERT: <span style="color: ${colorVar}">${winnerText}</span>`;
                 gameActive = false;
 
-                // Highlight winning cells
                 winningcells.forEach(index => {
                     cells[index].style.backgroundColor = "rgba(255, 255, 255, 0.2)";
-                    cells[index].style.boxShadow = "0 0 20px " + (currentPlayer === 'X' ? 'var(--status-error)' : 'var(--status-info)');
+                    cells[index].style.boxShadow = "0 0 20px " + colorVar;
                 });
                 return;
             }
 
             let roundDraw = !gameState.includes("");
             if (roundDraw) {
-                statusDisplay.innerText = "SYSTEM ALERT: Game Draw!";
+                statusDisplay.innerText = "SYSTEM ALERT: DRAW DETECTED";
                 gameActive = false;
                 return;
             }
@@ -632,12 +631,87 @@ $(document).ready(function () {
 
         function handlePlayerChange() {
             currentPlayer = currentPlayer === "O" ? "X" : "O";
-            if (document.getElementById("current-player")) {
-                const ind = document.getElementById("current-player");
-                ind.innerText = currentPlayer;
-                ind.style.color = currentPlayer === "O" ? "var(--status-info)" : "var(--status-error)";
+
+            // UI Update
+            if (currentPlayer === "O") {
+                statusDisplay.innerHTML = `Player <span style="color: var(--status-info)">O</span>'s Turn`;
+            } else {
+                statusDisplay.innerHTML = `System <span style="color: var(--status-error)">PROCESSING...</span>`;
+                // Trigger AI Move
+                setTimeout(makeAIMove, 600);
             }
         }
+
+        /* --- AI LOGIC (Minimax) --- */
+        function makeAIMove() {
+            if (!gameActive) return;
+
+            let bestScore = -Infinity;
+            let move;
+
+            // Find best move
+            for (let i = 0; i < 9; i++) {
+                if (gameState[i] === "") {
+                    gameState[i] = aiPlayer;
+                    let score = minimax(gameState, 0, false);
+                    gameState[i] = ""; // Undo
+                    if (score > bestScore) {
+                        bestScore = score;
+                        move = i;
+                    }
+                }
+            }
+
+            // Apply move
+            if (move !== undefined) {
+                const cell = cells[move];
+                handleCellPlayed(cell, move);
+                handleResultValidation();
+            }
+        }
+
+        const scores = { X: 10, O: -10, tie: 0 };
+
+        function minimax(board, depth, isMaximizing) {
+            let result = checkWinner();
+            if (result !== null) return scores[result];
+
+            if (isMaximizing) {
+                let bestScore = -Infinity;
+                for (let i = 0; i < 9; i++) {
+                    if (board[i] === "") {
+                        board[i] = aiPlayer;
+                        let score = minimax(board, depth + 1, false);
+                        board[i] = "";
+                        bestScore = Math.max(score, bestScore);
+                    }
+                }
+                return bestScore;
+            } else {
+                let bestScore = Infinity;
+                for (let i = 0; i < 9; i++) {
+                    if (board[i] === "") {
+                        board[i] = "O";
+                        let score = minimax(board, depth + 1, true);
+                        board[i] = "";
+                        bestScore = Math.min(score, bestScore);
+                    }
+                }
+                return bestScore;
+            }
+        }
+
+        function checkWinner() {
+            for (let i = 0; i < 8; i++) {
+                const [a, b, c] = winningConditions[i];
+                if (gameState[a] && gameState[a] === gameState[b] && gameState[a] === gameState[c]) {
+                    return gameState[a];
+                }
+            }
+            if (!gameState.includes("")) return "tie";
+            return null;
+        }
+        /* --- END AI LOGIC --- */
 
         function handleRestartGame() {
             gameActive = true;
@@ -878,7 +952,7 @@ $(document).ready(function () {
     /* =========================================
        HERO COUNTDOWN TIMER
     ========================================= */
-    const countDownDate = new Date("Feb 23, 2026 23:59:59").getTime();
+    const countDownDate = new Date("Mar 11, 2026 23:59:59").getTime();
 
     // Update the count down every 1 second
     const countdownInterval = setInterval(function () {
@@ -942,25 +1016,25 @@ $(document).ready(function () {
 
         // DATA: Faculty Member List
         const facultyList = [
-            { name: "Asst. Prof. Zalak Vyas", role: "HoD-CSE, IITE", image: "assets/img/faculty/Ms. Zalak Vyas.jpg" },
-            { name: "Asst. Prof. Hiren Mer", role: "Program Coordinator", image: "assets/img/faculty/Mr. Hiren Mer.jpg" },
-            { name: "Dr. Kaushal Jani", role: "CSE, IITE", image: "assets/img/faculty/Dr Kuashal Jani.png" },
-            { name: "Dr. Ashwin Patani", role: "CSE, IITE", image: "assets/img/faculty/Ashwin_Patani.jpg" },
-            { name: "Ms. Madhvi Bera", role: "CSE, IITE", image: "assets/img/faculty/Ms. Madhavi Bera.jpg" },
-            { name: "Dr. Sheetal Pandya", role: "CSE, IITE", image: "assets/img/faculty/Dr. Sheetal Pandya1.jpg" },
-            { name: "Mr. Parth Nirmal", role: "CSE, IITE", image: "assets/img/faculty/Mr. Parth Nirmal.jpg" },
-            { name: "Ms. Urvi Rabara", role: "CSE, IITE", image: "assets/img/faculty/Ms urvi .png" },
-            { name: "Ms. Shruti Jaiswal", role: "CSE, IITE", image: "assets/img/faculty/Ms.Shruti Jaiswal.png" },
-            { name: "Ms. Dipali Jitya", role: "CSE, IITE", image: "assets/img/faculty/Ms. Dipali Jitiya.jpg" },
-            { name: "Ms. Foram Gohel", role: "CSE, IITE", image: "assets/img/faculty/Ms. Foram Gohel.jpg" },
-            { name: "Ms. Toral Desai", role: "CSE, IITE", image: "assets/img/faculty/Ms. Toral Desai.jpg" },
-            { name: "Ms. Babita Patel", role: "CSE, IITE", image: "assets/img/faculty/Ms. Babita Patel.jpg" },
-            { name: "Ms. Sweta Rathod", role: "CSE, IITE", image: "assets/img/faculty/Ms. Sweta Rathod.jpg" },
-            { name: "Ms. Anjali Chopra", role: "CSE, IITE", image: "assets/img/faculty/Ms Anjali.png" },
-            { name: "Mr. Vatsal Suthar", role: "CSE, IITE", image: "assets/img/faculty/Mr Vatsal.jpg" },
-            { name: "Mr. Prejesh Pal Singh", role: "CSE, IITE", image: "assets/img/faculty/Ms prejesh pal.png" },
-            { name: "Ms. Zarna Kotak", role: "CSE, IITE", image: "assets/img/faculty/Ms. Zarna.jpg" },
-            { name: "Ms. Jenisha Patel", role: "CSE, IITE", image: "assets/img/faculty/Ms jenisha.jpg" }
+            { name: "Asst. Prof. Zalak Vyas", role: "HoD-CSE, IITE", image: "assets/img/WebP faculty Photo/Ms. Zalak Vyas.webp" },
+            { name: "Dr. Kaushal Jani", role: "HoD-CSE, IITE", image: "assets/img/WebP faculty Photo/Dr Kuashal Jani.webp" },
+            { name: "Asst. Prof. Hiren Mer", role: "Program Coordinator", image: "assets/img/WebP faculty Photo/Mr. Hiren Mer.webp" },
+            { name: "Dr. Ashwin Patani", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ashwin_Patani.webp" },
+            { name: "Ms. Madhvi Bera", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ms. Madhavi Bera.webp" },
+            { name: "Dr. Sheetal Pandya", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Dr. Sheetal Pandya1.webp" },
+            { name: "Mr. Parth Nirmal", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Mr. Parth Nirmal .webp" },
+            { name: "Ms. Urvi Rabara", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ms urvi .webp" },
+            { name: "Ms. Shruti Jaiswal", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ms.Shruti Jaiswal.webp" },
+            { name: "Ms. Dipali Jitya", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ms. Dipali Jitiya.webp" },
+            { name: "Ms. Foram Gohel", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ms. Foram Gohel.webp" },
+            { name: "Ms. Toral Desai", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ms. Toral Desai.webp" },
+            { name: "Ms. Babita Patel", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ms. Babita Patel.webp" },
+            { name: "Ms. Sweta Rathod", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ms. Sweta Rathod.webp" },
+            { name: "Ms. Anjali Chopra", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ms Anjali.webp" },
+            { name: "Mr. Vatsal Suthar", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Mr Vatsal.webp" },
+            { name: "Mr. Prejesh Pal Singh", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ms prejesh pal.webp" },
+            { name: "Ms. Zarna Kotak", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ms. Zarna.webp" },
+            { name: "Ms. Jenisha Patel", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ms jenisha.webp" }
         ];
 
         // Clear placeholder HTML
@@ -976,6 +1050,7 @@ $(document).ready(function () {
                              onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(fac.name)}&background=random&color=fff'">
                     </div>
                     <h4 class="faculty-name">${fac.name}</h4>
+                    <p class="faculty-role" style="color: rgba(255,255,255,0.75); font-size: 0.85rem; margin-top: 4px; font-weight: 500;">${fac.role}</p>
                 </div>
             `;
             track.insertAdjacentHTML("beforeend", cardHTML);
