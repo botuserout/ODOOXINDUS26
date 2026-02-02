@@ -246,6 +246,8 @@ img {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     grid-auto-rows: 300px;
+    grid-auto-flow: dense;
+    /* Fill gaps better */
 }
 
 .masonry-item {
@@ -253,6 +255,17 @@ img {
     border-radius: 8px;
     position: relative;
     cursor: pointer;
+    z-index: 1;
+    /* Ensure stacking context */
+    background: var(--bg-dark);
+    /* Prevent see-through gaps */
+    transition: z-index 0.3s step-end;
+    /* Delay z-index change on hover out */
+}
+
+.masonry-item:hover {
+    z-index: 10;
+    /* Bring to front on hover */
 }
 
 .masonry-item:nth-child(1) {
@@ -266,6 +279,7 @@ img {
 .masonry-item img {
     width: 100%;
     height: 100%;
+    object-position: center;
 }
 
 /* 4. Talks */
