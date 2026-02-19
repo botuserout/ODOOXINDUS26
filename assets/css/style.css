@@ -617,15 +617,12 @@ button:focus-visible,
     top: 30%;
     right: 15%;
     animation-delay: 2s;
-    /* Offset for natural feel */
 }
 
 /* ================= PROCESS SECTION (SCROLL) ================= */
 .process-section {
     position: relative;
     width: 100%;
-    /* Keep it tall enough to allow scrolling past or handling via JS pin */
-    /* Often we don't set height here if pinning, height comes from usage involved */
     background: transparent;
     overflow: hidden;
 }
@@ -636,10 +633,7 @@ button:focus-visible,
     display: flex;
     align-items: center;
     overflow: hidden;
-    /* Pinned container style */
-    /* Pinned container style */
-    /* Matching Website Core Theme */
-    background: linear-gradient(180deg, #110b1d 0%, #241235 50%, #110b1d 100%);
+    background: linear-gradient(180deg, #2a1b3d 0%, #442661 50%, #2a1b3d 100%);
     position: relative;
 }
 
@@ -647,9 +641,7 @@ button:focus-visible,
     display: flex;
     gap: 100px;
     padding-left: 10vw;
-    /* Start with some offset */
     padding-right: 10vw;
-    /* This will be animated horizontally */
 }
 
 .process-card {
@@ -661,9 +653,9 @@ button:focus-visible,
 }
 
 .card-inner {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(157, 78, 221, 0.12);
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(157, 78, 221, 0.3);
     border-radius: 24px;
     padding: 60px;
     display: flex;
@@ -673,7 +665,8 @@ button:focus-visible,
     overflow: hidden;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
     /* Glow Border Effect */
-    box-shadow: 0 0 0 1px rgba(124, 58, 237, 0.2), 0 0 30px rgba(124, 58, 237, 0.1);
+    box-shadow: 0 0 0 1px rgba(157, 78, 221, 0.3), 0 0 30px rgba(157, 78, 221, 0.15);
+    height: 100%;
 }
 
 .card-left {
@@ -688,31 +681,31 @@ button:focus-visible,
     font-weight: 700;
     line-height: 1;
     color: transparent;
-    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.3);
+    -webkit-text-stroke: 2px #fff;
     font-family: 'Space Grotesk', sans-serif;
 }
 
 .hud-box {
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(157, 78, 221, 0.3);
     padding: 10px 15px;
     border-radius: 4px;
     display: flex;
     align-items: center;
     gap: 10px;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(157, 78, 221, 0.1);
 }
 
 .hud-line {
     width: 20px;
     height: 2px;
-    background: #db2777;
+    background: #e0aaff;
     /* Pink accent */
 }
 
 .hud-text {
     font-size: 0.8rem;
     letter-spacing: 2px;
-    color: #db2777;
+    color: #ffffff;
     font-weight: 600;
 }
 
@@ -800,7 +793,6 @@ button:focus-visible,
         padding: 0 20px;
         gap: 40px;
         transform: none !important;
-        /* Force disable GSAP transform if needed via CSS override, but best controlled via JS matchMedia */
     }
 
     .process-card {
@@ -864,10 +856,8 @@ button:focus-visible,
 /* ================= SCHEDULE (Themed to About) ================= */
 .schedule-section {
     padding: 100px 0;
-    /* Match About Gradient */
-    background: linear-gradient(180deg, #241235 0%, #110b1d 100%);
-    /* Reversed/Continued gradient or same? standardizing */
-    background: linear-gradient(180deg, #110b1d 0%, #241235 100%);
+    /* Match About Gradient - Lighter Purple */
+    background: linear-gradient(180deg, #2a1b3d 0%, #442661 100%);
     position: relative;
     overflow: hidden;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -875,7 +865,7 @@ button:focus-visible,
 
 .schedule-subtitle {
     font-size: 1.2rem;
-    color: #d8b4fe;
+    color: #e0aaff;
     /* About Accent Light */
     letter-spacing: 4px;
     text-transform: uppercase;
@@ -899,7 +889,7 @@ button:focus-visible,
     /* About Border Color */
     transform: translateY(-50%);
     border-radius: 4px;
-    box-shadow: 0 0 15px rgba(126, 34, 206, 0.1);
+    box-shadow: 0 0 15px rgba(157, 78, 221, 0.1);
 }
 
 .timeline-line::after {
@@ -910,9 +900,9 @@ button:focus-visible,
     width: 30%;
     height: 100%;
     /* Gradient using About Purple */
-    background: linear-gradient(90deg, #7e22ce, #d8b4fe);
+    background: linear-gradient(90deg, #9d4edd, #e0aaff);
     border-radius: 4px;
-    box-shadow: 0 0 20px rgba(126, 34, 206, 0.4);
+    box-shadow: 0 0 20px rgba(157, 78, 221, 0.4);
 }
 
 .timeline-node {
@@ -945,8 +935,8 @@ button:focus-visible,
     width: 2px;
     height: 50px;
     /* Purple Gradient line */
-    background: linear-gradient(to top, #7e22ce, rgba(126, 34, 206, 0.3));
-    box-shadow: 0 0 12px rgba(126, 34, 206, 0.4);
+    background: linear-gradient(to top, #9d4edd, rgba(157, 78, 221, 0.3));
+    box-shadow: 0 0 12px rgba(157, 78, 221, 0.4);
 }
 
 .node-bottom {
@@ -970,8 +960,8 @@ button:focus-visible,
     width: 2px;
     /* Thicker */
     height: 40px;
-    background: linear-gradient(to bottom, #8b46eb, rgba(59, 130, 246, 0.5));
-    box-shadow: 0 0 12px rgba(139, 70, 235, 0.6);
+    background: linear-gradient(to bottom, #9d4edd, rgba(157, 78, 221, 0.5));
+    box-shadow: 0 0 12px rgba(157, 78, 221, 0.6);
     /* Glow */
 }
 
@@ -987,8 +977,8 @@ button:focus-visible,
 
 .node-circle.active {
     border-color: #fff;
-    background: #8b46eb;
-    box-shadow: 0 0 15px rgba(139, 70, 235, 0.8);
+    background: #9d4edd;
+    box-shadow: 0 0 15px rgba(157, 78, 221, 0.8);
 }
 
 /* Hover Detail styling */
@@ -1039,7 +1029,7 @@ button:focus-visible,
 
     height: 40px;
     border-radius: 50%;
-    border: 1px solid rgba(139, 70, 235, 0.5);
+    border: 1px solid rgba(157, 78, 221, 0.5);
     animation: pulse-ring 2s infinite;
 }
 
@@ -1064,8 +1054,8 @@ button:focus-visible,
     color: #fff;
     position: relative;
     padding: 15px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(157, 78, 221, 0.12);
+    border: 1px solid rgba(157, 78, 221, 0.3);
     border-radius: 12px;
     backdrop-filter: blur(5px);
     width: 100%;
@@ -1074,8 +1064,8 @@ button:focus-visible,
 
 .timeline-node:hover .node-content {
     transform: scale(1.05);
-    border-color: rgba(139, 70, 235, 0.5);
-    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(157, 78, 221, 0.5);
+    background: rgba(157, 78, 221, 0.15);
 }
 
 .node-title {
@@ -1094,8 +1084,8 @@ button:focus-visible,
 .node-status {
     font-size: 0.7rem;
     padding: 4px 8px;
-    background: rgba(59, 130, 246, 0.2);
-    color: #60a5fa;
+    background: rgba(157, 78, 221, 0.2);
+    color: #ffffff;
     border-radius: 20px;
     display: inline-block;
     font-weight: 600;

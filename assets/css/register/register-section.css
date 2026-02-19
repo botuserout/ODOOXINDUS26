@@ -5,16 +5,16 @@
 ========================================= */
 
 .register-section-root {
-    --reg-bg-gradient: linear-gradient(135deg, #2c1a32 0%, #1a1025 100%);
-    --reg-accent-purple: #a855f7;
+    --reg-bg-gradient: linear-gradient(180deg, #2a1b3d 0%, #442661 100%);
+    --reg-accent-purple: #9d4edd;
     /* Lavender/Purple */
     --reg-accent-dark: #7e22ce;
-    --reg-glass-surface: rgba(255, 255, 255, 0.05);
-    --reg-glass-border: rgba(255, 255, 255, 0.1);
+    --reg-glass-surface: rgba(157, 78, 221, 0.12);
+    --reg-glass-border: rgba(157, 78, 221, 0.3);
     --reg-text-main: #ffffff;
-    --reg-text-muted: #d1d5db;
+    --reg-text-muted: #f3e8ff;
     --reg-whatsapp-green: #25D366;
-    --reg-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    --reg-shadow: 0 25px 50px -12px rgba(157, 78, 221, 0.25);
 }
 
 .register-section {
@@ -78,7 +78,7 @@
 }
 
 .register-title .highlight {
-    background: linear-gradient(to right, #c084fc, #a855f7);
+    background: linear-gradient(to right, #e0aaff, #9d4edd);
     -webkit-background-clip: text;
     background-clip: text;
     /* standard compliant */
@@ -115,7 +115,7 @@
 
 .register-card:hover {
     transform: translateY(-5px);
-    border-color: rgba(168, 85, 247, 0.3);
+    border-color: rgba(157, 78, 221, 0.5);
 }
 
 /* Left Card: Highlights */
@@ -151,7 +151,7 @@
 .highlight-icon {
     width: 40px;
     height: 40px;
-    background: rgba(168, 85, 247, 0.1);
+    background: rgba(157, 78, 221, 0.15);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -165,13 +165,135 @@
     font-size: 1.05rem;
 }
 
+/* Featured Highlight Item */
+.highlight-item.highlight-item-featured {
+    grid-column: span 2;
+    background: linear-gradient(90deg, rgba(157, 78, 221, 0.25), rgba(157, 78, 221, 0.1));
+    border: 1px solid var(--reg-accent-purple);
+    box-shadow: 0 0 20px rgba(157, 78, 221, 0.4);
+    padding: 16px;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+}
+
+.highlight-item-featured .highlight-icon {
+    background: var(--reg-accent-purple);
+    color: #fff;
+    box-shadow: 0 0 10px rgba(157, 78, 221, 0.6);
+    transform: scale(1.1);
+}
+
+.highlight-item-featured .highlight-text {
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: #fff;
+    text-shadow: 0 0 8px rgba(157, 78, 221, 0.6);
+}
+
+/* Shine effect */
+.highlight-item-featured::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transform: skewX(-25deg);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% {
+        left: -100%;
+    }
+
+    20% {
+        left: 200%;
+    }
+
+    100% {
+        left: 200%;
+    }
+}
+
+/* Tooltip Styles */
+.highlight-tooltip {
+    visibility: hidden;
+    width: 320px;
+    background-color: var(--reg-text-muted);
+    /* Using existing variable for light background? No, better dark */
+    background: rgba(18, 12, 36, 0.98);
+    color: #ffffff;
+    text-align: center;
+    border-radius: 12px;
+    padding: 16px;
+
+    /* Position */
+    position: absolute;
+    z-index: 100;
+    top: 125%;
+    /* Start from below */
+    left: 50%;
+    transform: translateX(-50%);
+
+    /* Animation */
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+
+    /* Visuals */
+    font-size: 0.95rem;
+    line-height: 1.5;
+    font-weight: 500;
+    border: 1px solid var(--reg-accent-purple);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    pointer-events: none;
+}
+
+/* Arrow */
+.highlight-tooltip::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%;
+    /* At the top of the tooltip */
+    left: 50%;
+    margin-left: -8px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent var(--reg-accent-purple) transparent;
+}
+
+/* Show on Hover */
+.highlight-item-featured:hover {
+    overflow: visible;
+    /* Show tooltip outside */
+    z-index: 10;
+    border-color: #e0aaff;
+    background: rgba(157, 78, 221, 0.2);
+}
+
+/* Hide shine on hover to prevent unsightly spillover when overflow is visible */
+.highlight-item-featured:hover::after {
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.highlight-item-featured:hover .highlight-tooltip {
+    visibility: visible;
+    opacity: 1;
+    top: 115%;
+    /* Slide up slightly into position */
+    transform: translateX(-50%) translateY(0);
+}
+
 /* Right Card: Connect */
 .connect-card {
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+    background: linear-gradient(145deg, rgba(157, 78, 221, 0.15), rgba(157, 78, 221, 0.05));
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(157, 78, 221, 0.3);
     transform: translateY(30px);
     /* Visual offset offset */
 }
@@ -215,11 +337,11 @@
 /* Bottom Main CTA */
 .register-cta-wrapper {
     margin-top: 80px;
-    text-align: center;
+    text-align: right;
 }
 
 .btn-register-main {
-    background: linear-gradient(to right, #7e22ce, #a855f7);
+    background: linear-gradient(to right, #9d4edd, #e0aaff);
     color: white;
     padding: 18px 50px;
     font-size: 1.25rem;
@@ -227,7 +349,7 @@
     border-radius: 50px;
     border: none;
     cursor: pointer;
-    box-shadow: 0 10px 30px rgba(126, 34, 206, 0.4);
+    box-shadow: 0 10px 30px rgba(157, 78, 221, 0.4);
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -250,7 +372,7 @@
 
 .btn-register-main:hover {
     transform: scale(1.05) translateY(-3px);
-    box-shadow: 0 20px 40px rgba(126, 34, 206, 0.5);
+    box-shadow: 0 20px 40px rgba(157, 78, 221, 0.5);
 }
 
 .btn-register-main:hover::before {

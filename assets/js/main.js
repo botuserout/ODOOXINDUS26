@@ -1016,31 +1016,40 @@ $(document).ready(function () {
 
         // DATA: Faculty Member List
         const facultyList = [
+            // HoD & Coordinators
             { name: "Asst. Prof. Zalak Vyas", role: "HoD-CSE, IITE", image: "assets/img/WebP faculty Photo/Ms. Zalak Vyas.webp" },
             { name: "Dr. Kaushal Jani", role: "HoD-CSE, IITE", image: "assets/img/WebP faculty Photo/Dr Kuashal Jani.webp" },
             { name: "Asst. Prof. Hiren Mer", role: "Program Coordinator", image: "assets/img/WebP faculty Photo/Mr. Hiren Mer.webp" },
-            { name: "Dr. Ashwin Patani", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ashwin_Patani.webp" },
-            { name: "Ms. Madhvi Bera", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ms. Madhavi Bera.webp" },
-            { name: "Mr. Parth Nirmal", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Mr. Parth Nirmal .webp" },
-            { name: "Ms. Urvi Rabara", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ms urvi .webp" },
-            { name: "Ms. Shruti Jaiswal", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ms.Shruti Jaiswal.webp" },
-            { name: "Ms. Dipali Jitya", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ms. Dipali Jitiya.webp" },
-            { name: "Ms. Foram Gohel", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ms. Foram Gohel.webp" },
-            { name: "Ms. Toral Desai", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ms. Toral Desai.webp" },
-            { name: "Ms. Babita Patel", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ms. Babita Patel.webp" },
-            { name: "Ms. Sweta Rathod", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ms. Sweta Rathod.webp" },
-            { name: "Ms. Anjali Chopra", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ms Anjali.webp" },
-            { name: "Mr. Vatsal Suthar", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Mr Vatsal.webp" },
-            { name: "Ms. Zarna Kotak", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ms. Zarna.webp" },
-            { name: "Ms. Krupaba Chudasma", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ms. Krupaba Chudasma.webp" },
-            { name: "Ms. Shweta Bhramhbhatt", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Dr. Shweta Bhramhbhatt.jpg" },
-            { name: "Ms. Namrata Bhramhbhatt", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ms. Namrata Bhramhbhatt.webp" },
-            { name: "Ms. Riddhi Harsora", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ms. Riddhi Harsora.webp" },
-            { name: "Ms. Ruchi Patel", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ms. Ruchi Patel_2026.webp" },
+
+            // Committee Leads
+            { name: "Ms. Babita Patel", role: "Registration Lead", image: "assets/img/WebP faculty Photo/Ms. Babita Patel.webp" },
+            { name: "Ms. Bhumika Shah", role: "Marketing & Backstage Lead", image: "assets/img/WebP faculty Photo/Ms. Bhumika Shah.webp" },
+            { name: "Ms. Foram Gohel", role: "Design Lead", image: "assets/img/WebP faculty Photo/Ms. Foram Gohel.webp" },
+            { name: "Mr. Parth Nirmal", role: "Food & Discipline Lead", image: "assets/img/WebP faculty Photo/Mr. Parth Nirmal .webp" },
+            { name: "Mr. Divyang Makwana", role: "Social Media Lead", image: "assets/img/WebP faculty Photo/Mr. Divyang Makwana.jpg" },
+            { name: "Mr. Deep Paun", role: "Hospitality Lead", image: "assets/img/WebP faculty Photo/Mr. Deep Paun-2.png" },
+            { name: "Ms. Madhvi Bera", role: "Website Coordinator", image: "assets/img/WebP faculty Photo/Ms. Madhavi Bera.webp" },
+            { name: "Dr. Ashwin Patani", role: "Coordination Lead", image: "assets/img/WebP faculty Photo/Ashwin_Patani.webp" },
+            { name: "Ms. Sweta Rathod", role: "Account/Billing Lead", image: "assets/img/WebP faculty Photo/Ms. Sweta Rathod.webp" },
+            { name: "Ms. Shruti Jaiswal", role: "Decoration Lead", image: "assets/img/WebP faculty Photo/Ms.Shruti Jaiswal.webp" },
+            { name: "Ms. Toral Desai", role: "QRT Lead", image: "assets/img/WebP faculty Photo/Ms. Toral Desai.webp" },
+
+            // Committee Members
+            { name: "Ms. Krupa Chudasama", role: "Registration Team", image: "assets/img/WebP faculty Photo/Ms. Krupaba Chudasma.webp" },
+            { name: "Ms. Urvi Rabara", role: "Registration & Hospitality", image: "assets/img/WebP faculty Photo/Ms urvi .webp" },
+            { name: "Mr. Mitul Pobaru", role: "Marketing & Website", image: "assets/img/WebP faculty Photo/Mr. Mitul Pobaru.webp" },
+            { name: "Mr. Vatsal Suthar", role: "Food Team", image: "assets/img/WebP faculty Photo/Mr Vatsal.webp" },
+            { name: "Ms. Shreya Bhatt", role: "Food Team", image: "assets/img/WebP faculty Photo/Ms. Shreya Bhatt.webp" },
+            { name: "Ms. Vrushali Rajvanshi", role: "Social Media & Backstage", image: "assets/img/WebP faculty Photo/Ms. Vrushali Rajvanshi_2026.webp" },
+            { name: "Ms. Zarna Kotak", role: "Social Media & Hospitality", image: "assets/img/WebP faculty Photo/Ms. Zarna.webp" },
+            { name: "Dr. Shweta Brahmbhatt", role: "Hospitality Team", image: "assets/img/WebP faculty Photo/Dr. Shweta Bhramhbhatt.jpg" },
+            { name: "Ms. Anjali Chopra", role: "Hospitality & Backstage", image: "assets/img/WebP faculty Photo/Ms Anjali.webp" },
+            { name: "Ms. Krupa Soni", role: "Decoration Team", image: "assets/img/WebP faculty Photo/Ms. Krupa Soni.webp" },
+            { name: "Ms. Riddhi Harsora", role: "Decoration Team", image: "assets/img/WebP faculty Photo/Ms. Riddhi Harsora.webp" },
+            { name: "Ms. Ruchi Patel", role: "Decoration Team", image: "assets/img/WebP faculty Photo/Ms. Ruchi Patel_2026.webp" },
+            { name: "Ms. Dipali Jitiya", role: "Backstage & Anchoring", image: "assets/img/WebP faculty Photo/Ms. Dipali Jitiya.webp" },
+            { name: "Ms. Namrata Brahmbhatt", role: "Backstage & Anchoring", image: "assets/img/WebP faculty Photo/Ms. Namrata Bhramhbhatt.webp" },
             { name: "Ms. Rupal Kharya", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ms. Rupal Kharya.webp" },
-            { name: "Ms. Vrushali Rajvanshi", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ms. Vrushali Rajvanshi_2026.webp" },
-            { name: "Mr. Deep Paun", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Mr. Deep Paun-2.png" },
-            { name: "Mr. Divyang Makwana", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Mr. Divyang Makwana.jpg" },
         ];
 
         // Clear placeholder HTML

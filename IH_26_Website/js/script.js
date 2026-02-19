@@ -197,4 +197,141 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key === 'ArrowLeft') showPrev();
     });
 
+    /* --- 5. Carousel Logic (Modular) --- */
+    function init3DCarousel(sectionSelector, autoPlayDuration = 1000) {
+        const section = document.querySelector(sectionSelector);
+        if (!section) return;
+
+        const carouselItems = section.querySelectorAll('.carousel-item');
+        if (carouselItems.length === 0) return;
+
+        const prevBtn = section.querySelector('.carousel-btn.prev-btn');
+        const nextBtn = section.querySelector('.carousel-btn.next-btn');
+        const carouselContainer = section.querySelector('.carousel-container');
+
+        let activeIndex = 0;
+        let autoPlayInterval;
+
+        function updateCarousel() {
+            // Reset all classes
+            carouselItems.forEach(item => {
+                item.className = 'carousel-item';
+            });
+
+            // Calculate circular indices
+            const total = carouselItems.length;
+            const prevIndex = (activeIndex - 1 + total) % total;
+            const nextIndex = (activeIndex + 1) % total;
+
+            // Assign classes
+            carouselItems[activeIndex].classList.add('active');
+            carouselItems[prevIndex].classList.add('prev');
+            carouselItems[nextIndex].classList.add('next');
+        }
+
+        function nextSlide() {
+            activeIndex = (activeIndex + 1) % carouselItems.length;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            activeIndex = (activeIndex - 1 + carouselItems.length) % carouselItems.length;
+            updateCarousel();
+        }
+
+        let isPaused = false;
+        let isVisible = false;
+
+        function startAutoPlay() {
+            if (autoPlayInterval) clearInterval(autoPlayInterval);
+            // Only start if visible and not manually paused
+            if (isVisible && !isPaused) {
+                autoPlayInterval = setInterval(nextSlide, autoPlayDuration);
+            }
+        }
+
+        function stopAutoPlay() {
+            if (autoPlayInterval) clearInterval(autoPlayInterval);
+        }
+
+        // Event Listeners
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                isPaused = true;
+                stopAutoPlay();
+                // Resume after interaction delay
+                setTimeout(() => { isPaused = false; startAutoPlay(); }, 3000);
+            });
+        }
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                isPaused = true;
+                stopAutoPlay();
+                setTimeout(() => { isPaused = false; startAutoPlay(); }, 3000);
+            });
+        }
+
+        carouselItems.forEach((item) => {
+            item.addEventListener('click', () => {
+                if (item.classList.contains('prev')) {
+                    prevSlide();
+                    isPaused = true;
+                    stopAutoPlay();
+                    setTimeout(() => { isPaused = false; startAutoPlay(); }, 3000);
+                }
+                if (item.classList.contains('next')) {
+                    nextSlide();
+                    isPaused = true;
+                    stopAutoPlay();
+                    setTimeout(() => { isPaused = false; startAutoPlay(); }, 3000);
+                }
+            });
+        });
+
+        // Pause on hover
+        if (carouselContainer) {
+            carouselContainer.addEventListener('mouseenter', () => {
+                isPaused = true;
+                stopAutoPlay();
+            });
+            carouselContainer.addEventListener('mouseleave', () => {
+                isPaused = false;
+                startAutoPlay();
+            });
+        }
+
+        // Performance: Intersection Observer (Pause when off-screen)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    isVisible = true;
+                    startAutoPlay();
+                } else {
+                    isVisible = false;
+                    stopAutoPlay();
+                }
+            });
+        }, { threshold: 0.1 }); // Trigger when 10% visible
+
+        observer.observe(section);
+
+        // Performance: Page Visibility (Pause when tab hidden)
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                stopAutoPlay();
+            } else {
+                if (isVisible) startAutoPlay();
+            }
+        });
+
+        // Initialize
+        updateCarousel();
+    }
+
+    // Initialize Carousels
+    init3DCarousel('#talks', 1500);
+    init3DCarousel('#organizers', 1500);
+
 });

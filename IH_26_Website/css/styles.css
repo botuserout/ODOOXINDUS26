@@ -231,7 +231,9 @@ img {
 }
 
 .grid-item img {
+    width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 
 .grid-stack {
@@ -276,62 +278,208 @@ img {
     grid-row: span 2;
 }
 
-.masonry-item:nth-child(4) {
+/* .masonry-item:nth-child(4) {
     grid-column: span 2;
-}
+} */
 
 .masonry-item img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
     object-position: center;
+    transition: transform 0.5s ease;
 }
 
-/* 4. Talks */
+.masonry-item:hover img {
+    transform: scale(1.05);
+}
+
+/* 4. Talks (Infinity Carousel) */
 .talks-section {
-    height: 100vh;
-    padding: 0;
+    height: 80vh;
+    /* Reduced slightly to fit context */
+    padding: 2rem 0;
     overflow: hidden;
-    display: flex;
-    background: var(--bg-dark-gradient);
-}
-
-.full-width-flex {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    max-width: none;
-    margin: 0;
-}
-
-.blur-side {
-    flex: 1;
-    background: url('../assets/images/stage.png') no-repeat center/cover;
-    filter: blur(10px) brightness(40%);
-    transition: flex 0.5s;
-}
-
-.center-focus {
-    flex: 2;
     position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    border-left: 1px solid rgba(255, 255, 255, 0.1);
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--bg-dark-gradient);
+    perspective: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.center-focus img {
-    height: 100%;
+.carousel-viewport {
+    position: relative;
     width: 100%;
+    max-width: 1200px;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
 }
 
-.caption-overlay {
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+}
+
+.carousel-item {
+    position: absolute;
+    width: 60%;
+    height: 80%;
+    background: var(--bg-dark);
+    border-radius: 12px;
+    overflow: hidden;
+    /* Performance: Hint browser to promote to layer */
+    will-change: transform, opacity;
+    /* Sweeter, bouncier easing for "smooth" feel */
+    transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.8s ease, filter 0.8s ease, box-shadow 0.8s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    z-index: 0;
+    transform: translateX(0) scale(0.8) translateZ(0);
+    /* Hardware acceleration hack */
+    cursor: pointer;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+    transition: filter 0.5s ease;
+}
+
+.carousel-item.active {
+    opacity: 1;
+    z-index: 10;
+    transform: translateX(0) scale(1) translateZ(0);
+    box-shadow: 0 20px 60px rgba(168, 85, 247, 0.2);
+    /* Glow */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.carousel-item.active img {
+    filter: brightness(1) contrast(1.1);
+}
+
+.carousel-item.prev {
+    opacity: 0.6;
+    z-index: 5;
+    transform: translateX(-55%) scale(0.85) translateZ(0);
+    /* Shift left */
+}
+
+.carousel-item.next {
+    opacity: 0.6;
+    z-index: 5;
+    transform: translateX(55%) scale(0.85) translateZ(0);
+    /* Shift right */
+
+}
+
+/* Hide other items or stack them behind */
+.carousel-item.hidden-left {
+    transform: translateX(-100%) scale(0.7);
+    opacity: 0;
+    z-index: 0;
+}
+
+.carousel-item.hidden-right {
+    transform: translateX(100%) scale(0.7);
+    opacity: 0;
+    z-index: 0;
+}
+
+
+.carousel-caption {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
     padding: 2rem;
+    background: linear-gradient(to top, rgba(17, 11, 29, 0.95), transparent);
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+}
+
+.carousel-item.active:hover .carousel-caption {
+    transform: translateY(0);
+}
+
+.carousel-caption h3 {
+    font-size: 1.5rem;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+}
+
+.carousel-caption p {
+    color: var(--text-muted-light);
+    font-size: 0.9rem;
+}
+
+/* Nav Buttons */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 20;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-btn:hover {
+    background: var(--accent-vivid);
+    border-color: var(--accent-vivid);
+    box-shadow: 0 0 15px var(--accent-vivid);
+}
+
+.prev-btn {
+    left: 20px;
+}
+
+.next-btn {
+    right: 20px;
+}
+
+@media (max-width: 768px) {
+    .carousel-item {
+        width: 85%;
+        height: 60%;
+    }
+
+    .carousel-item.prev,
+    .carousel-item.next {
+        transform: scale(0.9);
+        /* simpler stack on mobile or just hidden */
+        opacity: 0;
+        /* Hide side items on very small screens if needed, or keep for effect */
+    }
+
+    .carousel-item.prev {
+        transform: translateX(-100%);
+    }
+
+    .carousel-item.next {
+        transform: translateX(100%);
+    }
 }
 
 /* 5. Competition (Sticky Horizontal) */
@@ -339,7 +487,7 @@ img {
     position: relative;
     padding: 0;
     /* Default height for desktop scroll */
-    height: 300vh;
+    height: 175vh;
     background: var(--bg-dark);
 }
 

@@ -5,16 +5,16 @@
 ========================================= */
 
 .faq-section-root {
-    --faq-bg-gradient: linear-gradient(135deg, #110b1d 0%, #0d0614 100%);
-    --faq-card-bg: rgba(255, 255, 255, 0.03);
-    --faq-card-bg-active: rgba(255, 255, 255, 0.08);
+    --faq-bg-gradient: linear-gradient(180deg, #2a1b3d 0%, #442661 100%);
+    --faq-card-bg: rgba(157, 78, 221, 0.12);
+    --faq-card-bg-active: rgba(157, 78, 221, 0.2);
     /* Slightly lighter on open */
-    --faq-border: rgba(255, 255, 255, 0.1);
-    --faq-accent: #a855f7;
+    --faq-border: rgba(157, 78, 221, 0.3);
+    --faq-accent: #9d4edd;
     /* Purple */
     --faq-text: #ffffff;
-    --faq-text-muted: #d1d5db;
-    --faq-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    --faq-text-muted: #f3e8ff;
+    --faq-shadow: 0 5px 20px rgba(157, 78, 221, 0.15);
 }
 
 .faq-section {
@@ -30,7 +30,7 @@
     position: absolute;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(168, 85, 247, 0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(157, 78, 221, 0.15) 0%, transparent 70%);
     border-radius: 50%;
     z-index: 1;
     pointer-events: none;
@@ -94,14 +94,14 @@
 }
 
 .faq-item:hover {
-    border-color: rgba(168, 85, 247, 0.3);
+    border-color: rgba(157, 78, 221, 0.5);
     background: var(--faq-card-bg-active);
 }
 
 .faq-item.active {
     background: var(--faq-card-bg-active);
     border-color: var(--faq-accent);
-    box-shadow: 0 10px 30px rgba(168, 85, 247, 0.15);
+    box-shadow: 0 10px 30px rgba(157, 78, 221, 0.25);
 }
 
 /* Question Header (Clickable) */
@@ -146,7 +146,7 @@
     overflow: hidden;
     transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     padding: 0 24px;
-    color: rgba(255, 255, 255, 0.85);
+    color: #f3e8ff;
     /* Slightly brighter for reading */
 }
 

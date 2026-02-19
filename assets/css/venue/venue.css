@@ -5,7 +5,7 @@
 ========================================= */
 
 .venue-section-root {
-    --venue-bg-gradient: linear-gradient(135deg, #1f1225 0%, #3a1c3f 100%);
+    --venue-bg-gradient: linear-gradient(180deg, #2a1b3d 0%, #442661 100%);
     --venue-card-bg: rgba(255, 255, 255, 0.03);
     --venue-card-border: rgba(255, 255, 255, 0.08);
     --venue-accent-primary: #a855f7;
