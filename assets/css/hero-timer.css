@@ -26,6 +26,41 @@
     z-index: 10;
 }
 
+/* --- REGISTRATION INFO PIN --- */
+.registration-info-pin {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px 16px;
+    border-radius: 50px;
+    margin-bottom: 12px;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.registration-info-pin i {
+    color: #4ade80;
+}
+
+.registration-info-pin span {
+    color: #e2e8f0;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+@media (max-width: 480px) {
+    .registration-info-pin {
+        padding: 6px 12px;
+        gap: 6px;
+    }
+
+    .registration-info-pin span {
+        font-size: 0.8rem;
+    }
+}
+
 /* --- COUNTDOWN TIMER --- */
 .countdown-header {
     font-size: 0.9rem;
