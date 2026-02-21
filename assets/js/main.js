@@ -113,7 +113,7 @@ $(document).ready(function () {
        SCROLL INTERACTIONS
     ========================================= */
     const navbar = $(".main-navbar");
-    const navLinks = $(".nav-link");
+    const navLinks = $(".nav-link, .dropdown-item");
     const navbarHeight = navbar.outerHeight();
 
     // Throttled Scroll Function
@@ -182,6 +182,11 @@ $(document).ready(function () {
 
     // Smooth Scroll on Click
     navLinks.on("click", function (e) {
+        // Close mobile menu on click (before checking for hash to ensure it always closes)
+        if (!$(this).hasClass('dropdown-toggle')) {
+            $(".navbar-collapse").collapse("hide");
+        }
+
         if (this.hash !== "") {
             e.preventDefault();
             const hash = this.hash;
@@ -195,9 +200,6 @@ $(document).ready(function () {
                     800,
                     "swing" // Switched to standard jQuery easing to fix broken scroll
                 );
-
-                // Close mobile menu on click
-                $(".navbar-collapse").collapse("hide");
             }
         }
     });
