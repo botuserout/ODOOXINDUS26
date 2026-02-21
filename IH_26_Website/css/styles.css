@@ -528,9 +528,19 @@ img {
 }
 
 @media (max-width: 768px) {
+    .talks-section {
+        height: auto;
+        padding: 4rem 0;
+    }
+
+    .carousel-viewport {
+        height: 400px;
+        margin-top: 2rem;
+    }
+
     .carousel-item {
         width: 85%;
-        height: 60%;
+        height: 80%;
     }
 
     .carousel-item.prev,

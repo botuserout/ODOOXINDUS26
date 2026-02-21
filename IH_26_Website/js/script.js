@@ -331,7 +331,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Initialize Carousels
-    init3DCarousel('#talks', 1500);
-    // init3DCarousel('#organizers', 1500); // Disabled after switch to static grid
+    init3DCarousel('#talks', 1200);
 
 });
