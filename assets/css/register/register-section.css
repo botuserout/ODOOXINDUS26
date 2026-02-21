@@ -120,7 +120,7 @@
 
 /* Left Card: Highlights */
 .highlights-card {
-    padding-right: 20px;
+    padding: 40px;
 }
 
 .card-label {
@@ -384,12 +384,13 @@
 @media (max-width: 992px) {
     .register-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 25px;
     }
 
     .connect-card {
         transform: translateY(0);
         text-align: center;
+        padding: 30px;
     }
 
     .connect-card:hover {
@@ -403,23 +404,33 @@
     .register-header {
         margin-bottom: 40px;
     }
+
+    .highlight-list {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .highlight-item.highlight-item-featured {
+        grid-column: span 1;
+    }
 }
 
 @media (max-width: 768px) {
     .register-section {
-        padding: 80px 0;
+        padding: 60px 0;
     }
 
     .register-card {
         padding: 30px 20px;
+        border-radius: 20px;
     }
 
     .register-title {
         font-size: 2rem;
     }
 
-    .highlight-list {
-        grid-template-columns: 1fr;
+    .highlight-text {
+        font-size: 1rem;
     }
 
     .btn-register-main {
@@ -428,37 +439,51 @@
         font-size: 1.1rem;
     }
 
-    .highlight-tooltip {
-        width: 280px;
-        max-width: calc(100vw - 40px);
-    }
-
     .register-title br {
         display: none;
+    }
+
+    .register-subtitle {
+        font-size: 1.1rem;
+        padding: 0 10px;
     }
 }
 
 @media (max-width: 480px) {
+    .register-section {
+        padding: 50px 0;
+    }
+
     .register-title {
         font-size: 1.75rem;
     }
 
     .highlight-text {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
     }
 
     .highlight-item-featured .highlight-text {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 
     .highlight-tooltip {
-        width: 250px;
+        width: 260px;
         max-width: calc(100vw - 30px);
         font-size: 0.85rem;
-        padding: 12px;
+        padding: 10px;
     }
 
     .register-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .btn-whatsapp {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+
+    .btn-register-main {
         font-size: 1rem;
+        padding: 14px 20px;
     }
 }
