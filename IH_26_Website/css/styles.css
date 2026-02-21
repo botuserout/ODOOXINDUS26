@@ -142,43 +142,104 @@ img {
     z-index: 2;
     text-align: center;
     color: var(--white);
-    /* Removed mix-blend-mode: overlay; caused visibility issues */
+    padding: 0 1rem;
 }
 
-.intro-bg-layer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* Darker overlay for text visibility */
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 1;
+.intro-content-box {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 4rem 6rem;
+    border-radius: 40px;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.4), inset 0 0 20px rgba(255, 255, 255, 0.05);
+    display: inline-block;
+    max-width: 95%;
+    animation: float-hero 6s ease-in-out infinite;
+    transform-origin: center;
 }
 
-.intro-overlay h1 {
-    font-size: 5rem;
-    margin-bottom: 1rem;
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+@keyframes float-hero {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(0.5deg);
+    }
 }
 
-.intro-overlay p {
-    font-size: 1.5rem;
+.hero-title {
+    font-size: 6rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.04em;
+    background: linear-gradient(135deg, #ffffff 0%, var(--glow-lavender) 50%, var(--accent-vivid) 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine-text 4s linear infinite;
+    text-transform: none;
+    /* Keep the capitalization as is */
+}
+
+@keyframes shine-text {
+    to {
+        background-position: 200% center;
+    }
+}
+
+.hero-separator {
+    width: 60px;
+    height: 4px;
+    background: var(--accent-vivid);
+    margin: 1.5rem auto;
+    border-radius: 2px;
+    box-shadow: 0 0 15px var(--accent-vivid);
+}
+
+.hero-subtitle {
+    font-size: 1.8rem;
     font-weight: 300;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 0;
+}
+
+@media (max-width: 768px) {
+    .intro-content-box {
+        padding: 2.5rem 1.5rem;
+        border-radius: 24px;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        letter-spacing: 0.2em;
+    }
 }
 
 .scroll-hint {
     position: absolute;
-    bottom: 20px;
+    bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
     color: var(--white);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    font-size: 0.9rem;
-    opacity: 0.8;
+    gap: 15px;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.7;
 }
 
 .arrow-down {
@@ -207,14 +268,17 @@ img {
 /* 2. Inauguration */
 .inauguration-section {
     background: transparent;
-    /* Allows body gradient to show or use var(--bg-dark) */
+    overflow: hidden;
+    /* Contain zoom/reveal animations within section boundaries */
+    position: relative;
 }
 
 .grid-asymmetric {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
     gap: 2rem;
-    height: 80vh;
+    height: 70vh;
+    /* Reduced height to ensure content + title + padding fits in 100vh without overflow-center bleed */
 }
 
 .grid-item {
@@ -238,13 +302,17 @@ img {
 
 .grid-stack {
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: repeat(auto-fit, minmax(0, 1fr));
+    /* Automatically adjusts if 1 or 2 items are present */
     gap: 2rem;
+    height: 100%;
 }
 
 /* 3. Team Energy */
 .team-section {
     background: transparent;
+    overflow: hidden;
+    position: relative;
 }
 
 .masonry-grid {
@@ -631,47 +699,102 @@ img {
 /* 7. Organizers */
 .organizers-section {
     background: var(--bg-dark);
-    perspective: 1000px;
+    padding: 6rem 2rem;
 }
 
 .card-grid {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 3rem;
     flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .card {
-    width: 280px;
-    height: 380px;
-    /* Glass Effect */
+    width: 480px;
+    height: 600px;
     background: var(--glass-surface);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
+    border-radius: 24px;
     overflow: hidden;
-    box-shadow: var(--shadow-soft);
-    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
-    text-align: center;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    transition: all 0.5s var(--transition-med);
+    display: flex;
+    flex-direction: column;
 }
 
 .card:hover {
-    transform: translateY(-10px) rotateX(2deg);
-    box-shadow: var(--shadow-hover);
+    transform: translateY(-15px) scale(1.02);
     border-color: var(--accent-vivid);
+    box-shadow: 0 30px 70px rgba(168, 85, 247, 0.2);
 }
 
 .card img {
-    height: 80%;
     width: 100%;
-    filter: brightness(0.9);
+    height: 78%;
+    object-fit: cover;
+    filter: brightness(0.85);
+    transition: filter 0.5s ease, transform 0.5s ease;
 }
 
-.card p {
-    padding: 1rem;
-    font-weight: 600;
-    color: var(--text-light);
+.card:hover img {
+    filter: brightness(1);
+    transform: scale(1.05);
+}
+
+.card-content {
+    height: 22%;
+    padding: 2rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.card-content h3 {
+    font-size: 1.8rem;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+}
+
+.card-content p {
+    font-size: 1.1rem;
+    color: var(--glow-lavender);
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+@media (max-width: 1024px) {
+    .card {
+        width: 100%;
+        max-width: 500px;
+        height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .card-grid {
+        gap: 2rem;
+    }
+
+    .card {
+        height: 400px;
+    }
+
+    .card-content h3 {
+        font-size: 1.4rem;
+    }
+
+    .card-content p {
+        font-size: 0.9rem;
+    }
 }
 
 /* 8. Memory Wall */
@@ -944,10 +1067,21 @@ img {
     .grid-asymmetric {
         grid-template-columns: 1fr;
         height: auto;
+        gap: 1.5rem;
+    }
+
+    .grid-stack {
+        grid-template-rows: auto;
+        gap: 1.5rem;
+    }
+
+    .grid-item {
+        height: 350px;
+        /* Explicit height ensures images don't collapse on mobile */
     }
 
     .grid-item.tall {
-        height: 300px;
+        height: 450px;
     }
 
     .masonry-grid {

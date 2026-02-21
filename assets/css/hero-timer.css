@@ -64,16 +64,18 @@
 
 .time-label {
     font-size: 0.8rem;
-    color: var(--timer-text-muted);
+    color: #e0aaff;
     text-transform: uppercase;
     margin-top: 5px;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
+    font-weight: 600;
 }
 
 .time-separator {
-    font-size: 2rem;
-    color: var(--timer-glass-border);
-    margin-top: -5px;
+    font-size: 2.5rem;
+    color: #875A7B;
+    margin-top: -8px;
+    text-shadow: 0 0 10px rgba(135, 90, 123, 0.5);
 }
 
 /* --- CTA BUTTONS --- */
@@ -89,52 +91,76 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-    padding: 12px 28px;
+    padding: 14px 32px;
     border-radius: 50px;
     text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
+    font-weight: 700;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     font-size: 1rem;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-/* Primary */
-.btn-hero-primary {
-    background: linear-gradient(135deg, var(--timer-accent), #7c3aed);
-    color: #fff;
-    border: none;
-    box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+/* Glass Shine Animation */
+.btn-hero::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -100%;
+    width: 60%;
+    height: 200%;
+    background: linear-gradient(to right,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.3) 50%,
+            rgba(255, 255, 255, 0) 100%);
+    transform: rotate(25deg);
+    transition: none;
+    animation: glass-reflection 4s infinite;
 }
 
-.btn-hero-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(168, 85, 247, 0.6);
-    color: #fff;
+@keyframes glass-reflection {
+    0% {
+        left: -100%;
+    }
+
+    20% {
+        left: 150%;
+    }
+
+    100% {
+        left: 150%;
+    }
 }
 
-/* Secondary */
+/* Secondary (Main Action) - Using Odoo Purple */
 .btn-hero-secondary {
-    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    background: linear-gradient(135deg, #c584b4, #ce73b0);
     color: #fff;
     border: none;
-    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+    box-shadow: 0 4px 15px rgba(135, 90, 123, 0.4);
 }
 
 .btn-hero-secondary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.6);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(135, 90, 123, 0.6);
     color: #fff;
 }
 
-/* Outline */
+/* Outline (Secondary Action) */
 .btn-hero-outline {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.3);
     color: #fff;
+    backdrop-filter: blur(5px);
 }
 
 .btn-hero-outline:hover {
     background: rgba(255, 255, 255, 0.15);
     border-color: #fff;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
     color: #fff;
 }
 
@@ -149,24 +175,31 @@
 .info-pin {
     display: flex;
     align-items: center;
-    gap: 8px;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 8px 20px;
+    gap: 10px;
+    background: rgba(135, 90, 123, 0.15);
+    backdrop-filter: blur(12px);
+    padding: 10px 24px;
     border-radius: 30px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    color: #eee;
-    font-size: 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 500;
     transition: all 0.3s ease;
     cursor: default;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .info-pin i {
-    color: var(--timer-accent);
+    color: #e0aaff;
+    /* Light purple for icon */
+    font-size: 1.1rem;
 }
 
 .info-pin:hover {
-    background: rgba(255, 255, 255, 0.2);
-    border-color: var(--timer-accent);
+    background: rgba(135, 90, 123, 0.25);
+    border-color: rgba(135, 90, 123, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(135, 90, 123, 0.3);
 }
 
 /* --- RESPONSIVE --- */

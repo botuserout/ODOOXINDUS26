@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Select all interactive images
     const galleryImages = Array.from(document.querySelectorAll(
-        '.grid-item img, .masonry-item img, .track-item img, .winner-hero img, .winner-sub img'
+        '.grid-item img, .masonry-item img, .track-item img, .winner-hero img, .winner-sub img, .card img'
     ));
 
     let currentIndex = 0;
@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Attach Click Events
     galleryImages.forEach((img, index) => {
         // Find the clickable parent container (the interactive div)
-        const parent = img.closest('.grid-item, .masonry-item, .track-item, .winner-hero, .winner-sub');
+        const parent = img.closest('.grid-item, .masonry-item, .track-item, .winner-hero, .winner-sub, .card');
         if (parent) {
             parent.addEventListener('click', (e) => {
                 e.stopPropagation(); // Prevent bubbling issues
@@ -332,6 +332,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize Carousels
     init3DCarousel('#talks', 1500);
-    init3DCarousel('#organizers', 1500);
+    // init3DCarousel('#organizers', 1500); // Disabled after switch to static grid
 
 });
