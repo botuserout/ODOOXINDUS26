@@ -116,6 +116,42 @@
     font-size: 1.1rem;
     line-height: 1.7;
     color: var(--about-text-secondary);
+    text-align: justify;
+}
+
+.about-eligibility {
+    margin-top: 10px;
+}
+
+.about-eligibility-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--about-accent-light);
+    display: block;
+}
+
+.eligibility-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.eligibility-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 1rem;
+    color: var(--about-text-secondary);
+    line-height: 1.5;
+}
+
+.eligibility-item i {
+    color: var(--about-accent-purple);
+    font-size: 0.9rem;
+    margin-top: 5px;
 }
 
 .about-cta-group {

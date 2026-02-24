@@ -309,6 +309,7 @@
     font-size: 1.1rem;
     color: var(--reg-text-muted);
     line-height: 1.5;
+    text-align: justify;
 }
 
 /* Buttons */

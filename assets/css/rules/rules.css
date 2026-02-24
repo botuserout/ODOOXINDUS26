@@ -46,6 +46,7 @@
     margin-bottom: 15px;
     background: linear-gradient(to right, #fff, #d8b4fe);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -117,9 +118,6 @@
 .rule-number {
     font-size: 0.85rem;
     text-transform: uppercase;
-    color: #5b21b6;
-    /* High contrast dark purple suitable for badges, or lighter for dark bg? */
-    /* Let's use a badge style */
     color: #d8b4fe;
     background: rgba(126, 34, 206, 0.2);
     padding: 5px 12px;
@@ -142,6 +140,7 @@
     font-size: 0.95rem;
     color: #cbd5e1;
     line-height: 1.6;
+    text-align: justify;
 }
 
 /* --- Responsive --- */
@@ -157,4 +156,53 @@
     .rules-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* --- Expectations Section --- */
+.expectations-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+    margin: 80px 0;
+}
+
+.category-header {
+    margin-bottom: 30px;
+    border-left: 4px solid var(--venue-accent-primary, #a855f7);
+    padding-left: 20px;
+}
+
+.category-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+}
+
+.rule-number.must-have {
+    color: #ff4d4d;
+    background: rgba(255, 77, 77, 0.1);
+    border: 1px solid rgba(255, 77, 77, 0.3);
+}
+
+.rule-number.nice-to-have {
+    color: #4ade80;
+    background: rgba(74, 222, 128, 0.1);
+    border: 1px solid rgba(74, 222, 128, 0.3);
+}
+
+.expectations-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.expectations-intro h3 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.expectations-intro p {
+    color: #9ca3af;
+    font-size: 1.1rem;
 }
