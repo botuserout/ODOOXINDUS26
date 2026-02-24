@@ -80,7 +80,7 @@
     font-family: 'Inter', sans-serif;
     font-size: 3rem;
     font-weight: 800;
-    line-height: 1.1;
+    line-height: 1.2;
     margin-bottom: 20px;
 }
 
@@ -93,6 +93,7 @@
     color: var(--about-text-secondary);
     font-weight: 300;
     max-width: 600px;
+    line-height: 1.5;
 }
 
 /* --- Content Grid --- */
@@ -101,7 +102,7 @@
     grid-template-columns: 1fr 1fr;
     gap: 80px;
     align-items: center;
-    min-height: 500px;
+    min-height: 600px;
 }
 
 /* Left Column: Narrative & CTA */
@@ -113,8 +114,8 @@
 }
 
 .about-description {
-    font-size: 1.1rem;
-    line-height: 1.7;
+    font-size: 1.15rem;
+    line-height: 1.8;
     color: var(--about-text-secondary);
     text-align: justify;
 }
@@ -346,7 +347,7 @@
     -webkit-backdrop-filter: blur(8px);
     box-shadow: 0 10px 30px rgba(157, 78, 221, 0.15);
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    min-height: 140px;
+    min-height: 200px;
 }
 
 .about-img-slot img {
@@ -427,7 +428,7 @@
 
     .about-img-slot {
         width: 100%;
-        min-height: 180px;
+        min-height: 220px;
         margin-bottom: 10px;
     }
 }

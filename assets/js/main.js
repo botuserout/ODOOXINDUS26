@@ -1048,7 +1048,7 @@ $(document).ready(function () {
             { name: "Ms. Riddhi Harsora", role: "Decoration Team", image: "assets/img/updated_faculty/Riddhi Harsora (IITE).webp" },
             { name: "Ms. Ruchi Patel", role: "Decoration Team", image: "assets/img/WebP faculty Photo/Ms. Ruchi Patel_2026.webp" },
             { name: "Ms. Dipali Jitiya", role: "Backstage & Anchoring", image: "assets/img/updated_faculty/Dipali Jitiya (IITE).webp" },
-            { name: "Ms. Namrata Brahmbhatt", role: "Backstage & Anchoring", image: "assets/img/WebP faculty Photo/Ms. Namrata Bhramhbhatt.webp" },
+            { name: "Ms. Namrata Brahmbhatt", role: "Backstage & Anchoring", image: "/assets/img/WebP faculty Photo/Ms. Namrata Bhramhbhatt.webp" },
             { name: "Ms. Rupal Kharya", role: "CSE, IITE", image: "assets/img/WebP faculty Photo/Ms. Rupal Kharya.webp" },
             { name: "Ms. Devyangini Vasava", role: "CSE, IITE", image: "assets/img/updated_faculty/Devyangini Vasava.webp" },
         ];
