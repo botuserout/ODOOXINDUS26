@@ -121,6 +121,8 @@
 /* Left Card: Highlights */
 .highlights-card {
     padding: 40px;
+    position: relative;
+    z-index: 10;
 }
 
 .card-label {
