@@ -517,8 +517,10 @@ $(document).ready(function () {
                         end: () => `+=${getScrollAmount() * -1}`, // Scroll distance same as width
                         pin: true,
                         animation: tween,
-                        scrub: 1, // Smooth scrubbing
+                        scrub: 0.5, // Faster scrub prevents visible trailing lag
                         invalidateOnRefresh: true,
+                        anticipatePin: 1, // Prevents jump on fast scroll
+                        fastScrollEnd: true, // Auto-completes animation if scrolled past very fast
                         // markers: true // Enable for debugging
                     });
 
@@ -1018,10 +1020,7 @@ $(document).ready(function () {
 
         // DATA: Faculty Member List
         const facultyList = [
-            // HoD & Coordinators
-            { name: "Asst. Prof. Zalak Vyas", role: "HoD-CSE, IITE", image: "assets/img/updated_faculty/Zalak Vyas (IITE).webp" },
-            { name: "Dr. Kaushal Jani", role: "HoD-CSE, IITE", image: "assets/img/updated_faculty/Kaushal Jani (IIICT).jpg" },
-            { name: "Asst. Prof. Hiren Mer", role: "Program Coordinator", image: "assets/img/WebP faculty Photo/Mr. Hiren Mer.webp" },
+            // Committees / Leads
             { name: "Ms. Babita Patel", role: "Registration Lead", image: "assets/img/updated_faculty/Babita Patel (CSE).webp" },
             { name: "Ms. Bhumika Shah", role: "Marketing & Backstage Lead", image: "assets/img/updated_faculty/Bhoomika Shah (IITE).webp" },
             { name: "Ms. Foram Gohel", role: "Design Lead", image: "assets/img/WebP faculty Photo/Ms. Foram Gohel.webp" },
