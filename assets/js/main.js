@@ -1027,7 +1027,6 @@ $(document).ready(function () {
             { name: "Mr. Parth Nirmal", role: "Food & Discipline Lead", image: "assets/img/updated_faculty/Parth Nirmal (IITE).webp" },
             { name: "Mr. Divyang Makwana", role: "Social Media Lead", image: "assets/img/updated_faculty/Divyang (IITE).webp" },
             { name: "Mr. Deep Paun", role: "Hospitality Lead", image: "assets/img/WebP faculty Photo/Mr. Deep Paun-2.png" },
-            { name: "Ms. Madhvi Bera", role: "Website Coordinator", image: "assets/img/updated_faculty/Madhvi Bera (IIITE).webp" },
             { name: "Dr. Ashwin Patani", role: "Coordination Lead", image: "assets/img/updated_faculty/Dr Ashwin Patni (IITE).webp" },
             { name: "Ms. Sweta Rathod", role: "Account/Billing Lead", image: "assets/img/updated_faculty/Sweta Rathod (IITE).webp" },
             { name: "Ms. Shruti Jaiswal", role: "Decoration Lead", image: "assets/img/updated_faculty/Shruti Jayswal (CSE).webp" },
