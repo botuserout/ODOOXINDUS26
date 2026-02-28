@@ -1028,6 +1028,7 @@ $(document).ready(function () {
             { name: "Mr. Divyang Makwana", role: "Social Media Lead", image: "assets/img/updated_faculty/Divyang (IITE).webp" },
             { name: "Mr. Deep Paun", role: "Hospitality Lead", image: "assets/img/WebP faculty Photo/Mr. Deep Paun-2.png" },
             { name: "Dr. Ashwin Patani", role: "Coordination Lead", image: "assets/img/updated_faculty/Dr Ashwin Patni (IITE).webp" },
+            { name: "Ms. Madhvi Bera", role: "Website Coordinator", image: "assets/img/updated_faculty/Madhvi Bera (IIITE).webp" },
             { name: "Ms. Sweta Rathod", role: "Account/Billing Lead", image: "assets/img/updated_faculty/Sweta Rathod (IITE).webp" },
             { name: "Ms. Shruti Jaiswal", role: "Decoration Lead", image: "assets/img/updated_faculty/Shruti Jayswal (CSE).webp" },
             { name: "Ms. Toral Desai", role: "QRT Lead", image: "assets/img/updated_faculty/Toral Desai (IITE).webp" },
@@ -1073,13 +1074,13 @@ $(document).ready(function () {
         // --- ANIMATION START ---
 
         // 1. Clone cards to ensure enough width for seamless loop
-        const cards = gsap.utils.toArray(".faculty-card");
+        const cards = gsap.utils.toArray(".faculty-track .faculty-card");
         cards.forEach(card => {
             const clone = card.cloneNode(true);
             track.appendChild(clone);
         });
 
-        const allCards = gsap.utils.toArray(".faculty-card");
+        const allCards = gsap.utils.toArray(".faculty-track .faculty-card");
 
         // 2. Continuous Loop Animation
         const cardWidth = 280; // from CSS
@@ -1161,5 +1162,4 @@ $(document).ready(function () {
     }
 
 });
-
 
